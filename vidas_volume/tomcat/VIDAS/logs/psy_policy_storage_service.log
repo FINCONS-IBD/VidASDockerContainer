@@ -1,0 +1,466 @@
+2017-12-13 13:23:53 INFO  PoliciesStorageRestletApplication:20 - Called the createInboundRoot restlet method...
+2017-12-13 13:23:54 INFO  PoliciesStorageRestletApplication:27 - Created the Restlet CustomVerifier...
+2017-12-13 13:23:54 INFO  PoliciesStorageRestletApplication:38 - Created and returned the Restlet Context with url-resource association...
+2017-12-13 13:23:54 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:23:54 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:23:54 INFO  PropertiesHelper:17 - Loading configuration parameters...
+2017-12-13 13:23:54 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:23:54 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:23:54 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:23:54 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/
+2017-12-13 13:23:54 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/
+2017-12-13 13:23:54 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:23:54 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:23:54 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:23:54 INFO  Dispatcher:68 - Folder requested: ROOT
+2017-12-13 13:23:54 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:23:54 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:23:56 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:23:59 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:00 DEBUG DBPolicyConnection:207 - getContent method start...
+2017-12-13 13:24:00 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:00 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:00 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:00 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:00 DEBUG DBPolicyConnection:338 - Get content of the folder requested
+2017-12-13 13:24:00 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"listPolicy":[{"namePolicy":"PolicyRoot","URLDir":"PolicyRoot"}]}
+2017-12-13 13:24:02 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:02 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:02 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:02 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:24:02 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:24:02 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/PolicyRoot
+2017-12-13 13:24:03 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/PolicyRoot
+2017-12-13 13:24:03 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:24:03 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:24:03 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:24:03 DEBUG DBPolicyConnection:535 - relativePath/PolicyRoot
+2017-12-13 13:24:03 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:24:03 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:03 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:03 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:03 DEBUG DBPolicyConnection:285 - Check if node selected is a Directory or a Policy
+2017-12-13 13:24:03 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:03 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:03 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:03 DEBUG DBPolicyConnection:301 - Node selected is a Directory
+2017-12-13 13:24:03 DEBUG DBPolicyConnection:207 - getContent method start...
+2017-12-13 13:24:03 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:03 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:03 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:03 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:03 DEBUG DBPolicyConnection:338 - Get content of the folder requested
+2017-12-13 13:24:03 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"listPolicy":[{"namePolicy":"FINCONS_SpA","URLDir":"PolicyRoot/FINCONS_SpA"},{"namePolicy":"Fly Emirates","URLDir":"PolicyRoot/Fly Emirates"},{"namePolicy":"Air France","URLDir":"PolicyRoot/Air France"},{"namePolicy":"FTI","URLDir":"PolicyRoot/FTI"},{"namePolicy":"Lufthansa","URLDir":"PolicyRoot/Lufthansa"},{"namePolicy":"Alitalia","URLDir":"PolicyRoot/Alitalia"},{"namePolicy":"UC-Puglia","URLDir":"PolicyRoot/UC-Puglia"},{"namePolicy":"UC-ANtwerp","URLDir":"PolicyRoot/UC-ANtwerp"},{"namePolicy":"dockerPolicy","URLDir":"PolicyRoot/dockerPolicy"}]}
+2017-12-13 13:24:06 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:06 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:06 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:06 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:24:06 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:24:06 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/PolicyRoot/Fly Emirates
+2017-12-13 13:24:06 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/PolicyRoot/Fly Emirates
+2017-12-13 13:24:06 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:24:06 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:24:06 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:24:06 DEBUG DBPolicyConnection:535 - relativePath/PolicyRoot/Fly Emirates
+2017-12-13 13:24:06 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:24:06 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:06 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:06 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:06 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:06 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:06 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:06 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:07 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:07 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:07 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:07 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:5","@class":"Directory","name":"Fly Emirates","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 13 10:09:51 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:07 DEBUG DBPolicyConnection:285 - Check if node selected is a Directory or a Policy
+2017-12-13 13:24:07 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:07 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:07 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:07 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:07 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:07 DEBUG DBPolicyConnection:301 - Node selected is a Directory
+2017-12-13 13:24:07 DEBUG DBPolicyConnection:207 - getContent method start...
+2017-12-13 13:24:07 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:07 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:07 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:07 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:07 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:07 DEBUG DBPolicyConnection:338 - Get content of the folder requested
+2017-12-13 13:24:07 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"listPolicy":[{"namePolicy":"Default policies","URLDir":"PolicyRoot/Fly Emirates/Default policies"}]}
+2017-12-13 13:24:08 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:08 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:08 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:08 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:24:08 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:24:08 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/PolicyRoot/Fly Emirates/Default policies
+2017-12-13 13:24:08 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/PolicyRoot/Fly Emirates/Default policies
+2017-12-13 13:24:08 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:24:08 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:24:08 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:24:08 DEBUG DBPolicyConnection:535 - relativePath/PolicyRoot/Fly Emirates/Default policies
+2017-12-13 13:24:08 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:24:08 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:08 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:09 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:09 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:09 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:5","@class":"Directory","name":"Fly Emirates","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 13 10:09:51 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:09 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:09 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:09 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:6","@class":"Directory","name":"Default policies","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 20 10:29:26 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:09 DEBUG DBPolicyConnection:285 - Check if node selected is a Directory or a Policy
+2017-12-13 13:24:09 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:09 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:09 DEBUG DBPolicyConnection:301 - Node selected is a Directory
+2017-12-13 13:24:09 DEBUG DBPolicyConnection:207 - getContent method start...
+2017-12-13 13:24:09 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:09 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:09 DEBUG DBPolicyConnection:338 - Get content of the folder requested
+2017-12-13 13:24:09 ERROR DBPolicyConnection:364 - JSON Exception JSONObject["data"] not found.
+2017-12-13 13:24:09 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"listPolicy":[]}
+2017-12-13 13:24:13 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:13 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:13 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:13 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:24:13 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:24:13 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/PolicyRoot/FINCONS_SpA
+2017-12-13 13:24:13 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/PolicyRoot/FINCONS_SpA
+2017-12-13 13:24:13 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:24:13 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:24:13 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:24:13 DEBUG DBPolicyConnection:535 - relativePath/PolicyRoot/FINCONS_SpA
+2017-12-13 13:24:13 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:24:13 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:13 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:13 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:13 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:0","@class":"Directory","name":"FINCONS_SpA","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 13 09:06:54 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:13 DEBUG DBPolicyConnection:285 - Check if node selected is a Directory or a Policy
+2017-12-13 13:24:13 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:13 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:13 DEBUG DBPolicyConnection:301 - Node selected is a Directory
+2017-12-13 13:24:13 DEBUG DBPolicyConnection:207 - getContent method start...
+2017-12-13 13:24:13 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:13 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:14 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:14 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:14 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:14 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:14 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:14 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:14 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:14 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:14 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:14 DEBUG DBPolicyConnection:338 - Get content of the folder requested
+2017-12-13 13:24:14 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"listPolicy":[{"URLPolicy":"PolicyRoot/FINCONS_SpA/IT & Fincons","namePolicy":"IT & Fincons","xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"f4]D@R_WtXNJb]e/VJHw\" x=\"146\" y=\"119\"><statement name=\"CONDITION\"><block type=\"Country\" id=\"]ezp9tZn^Alx0P+^TZ7N\"><field name=\"Value\">IT<\/field><next><block type=\"Organization\" id=\"[rUXPqQ*X{;Nh|o}q6.C\"><field name=\"Value\">FINCONS SpA<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>"},{"URLPolicy":"PolicyRoot/FINCONS_SpA/Complex Policy","namePolicy":"Complex Policy","xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"or_condition\" id=\"f?x9C:}=S[h=]tNI;^|g\" x=\"240\" y=\"149\"><statement name=\"CONDITION\"><block type=\"Unit\" id=\"]Tj?x.ExG!YT@zsD7^O%\"><field name=\"Value\">IBD &amp; Innovation BU<\/field><next><block type=\"or_condition\" id=\"dAmr#)t~nJ=]rHt]mdkV\"><statement name=\"CONDITION\"><block type=\"Country\" id=\"*nP|g;/V)HhK(awy8IjC\"><field name=\"Value\">DE<\/field><next><block type=\"and_condition\" id=\",YTF7X-wkh4,I+fBIp7o\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"Ntg:U$q+$+G@E2R76!Qm\"><field name=\"Value\">FINCONS SpA<\/field><next><block type=\"Country\" id=\"s%f3]NMi)Lm0!iXVc~2=\"><field name=\"Value\">IT<\/field><\/block><\/next><\/block><\/statement><\/block><\/next><\/block><\/statement><\/block><\/next><\/block><\/statement><\/block><\/xml>"},{"URLPolicy":"PolicyRoot/FINCONS_SpA/testPolicy","namePolicy":"testPolicy","xmlPolicy":""},{"URLPolicy":"PolicyRoot/FINCONS_SpA/test a Policy","namePolicy":"test a Policy","xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"620451713\" x=\"20\" y=\"20\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"404972502\" x=\"20\" y=\"20\"><field name=\"Value\">FINCONS SpA<\/field><next><block type=\"Country\" id=\"79013417\" x=\"20\" y=\"20\"><field name=\"Value\">IT<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>"},{"URLPolicy":"PolicyRoot/FINCONS_SpA/test simple Policy","namePolicy":"test simple Policy","xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"36641260\" x=\"20\" y=\"20\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"254049309\" x=\"20\" y=\"20\"><field name=\"Value\">FINCONS SpA<\/field><next><block type=\"Country\" id=\"450444992\" x=\"20\" y=\"20\"><field name=\"Value\">IT<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>"},{"URLPolicy":"PolicyRoot/FINCONS_SpA/policy_by_test","namePolicy":"policy_by_test","xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"or_condition\" id=\"NI4ELAEJ8xF5M#,iJmDB\" x=\"136\" y=\"124\"><statement name=\"CONDITION\"><block type=\"Country\" id=\"]Htp6K,B.?$(0(8sf4dJ\"><field name=\"Value\">DE<\/field><next><block type=\"Organization\" id=\"^dVaSN)12?x{WJ3ToX,T\"><field name=\"Value\">FTI<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>"},{"URLPolicy":"PolicyRoot/FINCONS_SpA/DE & FTI","namePolicy":"DE & FTI","xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"O/6`.?y~+rZO_eo#x`1~\" x=\"37\" y=\"121\"><statement name=\"CONDITION\"><block type=\"Country\" id=\"UJ2`sI6]#_P+4~T^;v*3\"><field name=\"Value\">DE<\/field><next><block type=\"Organization\" id=\"|(@[2A.9_YDIfAvLEbI0\"><field name=\"Value\">FTI<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>"}]}
+2017-12-13 13:24:15 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:15 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:15 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:15 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:24:15 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:24:15 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/PolicyRoot/FINCONS_SpA/Complex Policy
+2017-12-13 13:24:15 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/PolicyRoot/FINCONS_SpA/Complex Policy
+2017-12-13 13:24:15 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:24:15 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:24:15 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:24:15 DEBUG DBPolicyConnection:535 - relativePath/PolicyRoot/FINCONS_SpA/Complex Policy
+2017-12-13 13:24:15 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:24:15 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:15 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:15 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:15 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:15 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:15 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:15 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:15 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:15 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:15 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:15 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:0","@class":"Directory","name":"FINCONS_SpA","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 13 09:06:54 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:15 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:15 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:16 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:16 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:16 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:16 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#18:5","@class":"Policy","blockly_xml":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"or_condition\" id=\"f?x9C:}=S[h=]tNI;^|g\" x=\"240\" y=\"149\"><statement name=\"CONDITION\"><block type=\"Unit\" id=\"]Tj?x.ExG!YT@zsD7^O%\"><field name=\"Value\">IBD &amp; Innovation BU<\/field><next><block type=\"or_condition\" id=\"dAmr#)t~nJ=]rHt]mdkV\"><statement name=\"CONDITION\"><block type=\"Country\" id=\"*nP|g;/V)HhK(awy8IjC\"><field name=\"Value\">DE<\/field><next><block type=\"and_condition\" id=\",YTF7X-wkh4,I+fBIp7o\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"Ntg:U$q+$+G@E2R76!Qm\"><field name=\"Value\">FINCONS SpA<\/field><next><block type=\"Country\" id=\"s%f3]NMi)Lm0!iXVc~2=\"><field name=\"Value\">IT<\/field><\/block><\/next><\/block><\/statement><\/block><\/next><\/block><\/statement><\/block><\/next><\/block><\/statement><\/block><\/xml>","name":"Complex Policy","value":"ou:IBD_&_Innovation_BU c:DE o:FINCONS_SpA c:IT 2of2 1of2 1of2 vidasrole:AnalysisSerivces 1of2","created_by":"diego.pedone@finconsgroup.com","version":2,"timestamp":"Thu Jul 13 12:42:48 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:16 DEBUG DBPolicyConnection:285 - Check if node selected is a Directory or a Policy
+2017-12-13 13:24:16 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:16 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:16 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:16 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:16 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:16 DEBUG DBPolicyConnection:301 - Node selected is a Policy
+2017-12-13 13:24:16 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:16 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:16 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:16 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:16 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:16 DEBUG Dispatcher:93 - Get information about the policy requested
+2017-12-13 13:24:16 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"or_condition\" id=\"f?x9C:}=S[h=]tNI;^|g\" x=\"240\" y=\"149\"><statement name=\"CONDITION\"><block type=\"Unit\" id=\"]Tj?x.ExG!YT@zsD7^O%\"><field name=\"Value\">IBD &amp; Innovation BU<\/field><next><block type=\"or_condition\" id=\"dAmr#)t~nJ=]rHt]mdkV\"><statement name=\"CONDITION\"><block type=\"Country\" id=\"*nP|g;/V)HhK(awy8IjC\"><field name=\"Value\">DE<\/field><next><block type=\"and_condition\" id=\",YTF7X-wkh4,I+fBIp7o\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"Ntg:U$q+$+G@E2R76!Qm\"><field name=\"Value\">FINCONS SpA<\/field><next><block type=\"Country\" id=\"s%f3]NMi)Lm0!iXVc~2=\"><field name=\"Value\">IT<\/field><\/block><\/next><\/block><\/statement><\/block><\/next><\/block><\/statement><\/block><\/next><\/block><\/statement><\/block><\/xml>","policy":"ou:IBD_&_Innovation_BU c:DE o:FINCONS_SpA c:IT 2of2 1of2 1of2 vidasrole:AnalysisSerivces 1of2"}
+2017-12-13 13:24:22 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:22 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:22 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:22 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:24:22 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:24:22 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/
+2017-12-13 13:24:22 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/
+2017-12-13 13:24:22 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:24:22 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:24:22 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:24:22 INFO  Dispatcher:68 - Folder requested: ROOT
+2017-12-13 13:24:22 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:24:22 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:22 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:23 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:23 DEBUG DBPolicyConnection:207 - getContent method start...
+2017-12-13 13:24:23 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:23 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:23 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:23 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:23 DEBUG DBPolicyConnection:338 - Get content of the folder requested
+2017-12-13 13:24:23 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"listPolicy":[{"namePolicy":"PolicyRoot","URLDir":"PolicyRoot"}]}
+2017-12-13 13:24:25 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:25 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:25 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:25 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:24:25 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:24:25 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/PolicyRoot
+2017-12-13 13:24:25 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/PolicyRoot
+2017-12-13 13:24:25 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:24:25 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:24:25 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:24:25 DEBUG DBPolicyConnection:535 - relativePath/PolicyRoot
+2017-12-13 13:24:25 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:24:25 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:25 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:25 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:25 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:25 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:25 DEBUG DBPolicyConnection:285 - Check if node selected is a Directory or a Policy
+2017-12-13 13:24:25 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:25 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:26 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:26 DEBUG DBPolicyConnection:301 - Node selected is a Directory
+2017-12-13 13:24:26 DEBUG DBPolicyConnection:207 - getContent method start...
+2017-12-13 13:24:26 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:26 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:26 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:26 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:26 DEBUG DBPolicyConnection:338 - Get content of the folder requested
+2017-12-13 13:24:26 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"listPolicy":[{"namePolicy":"FINCONS_SpA","URLDir":"PolicyRoot/FINCONS_SpA"},{"namePolicy":"Fly Emirates","URLDir":"PolicyRoot/Fly Emirates"},{"namePolicy":"Air France","URLDir":"PolicyRoot/Air France"},{"namePolicy":"FTI","URLDir":"PolicyRoot/FTI"},{"namePolicy":"Lufthansa","URLDir":"PolicyRoot/Lufthansa"},{"namePolicy":"Alitalia","URLDir":"PolicyRoot/Alitalia"},{"namePolicy":"UC-Puglia","URLDir":"PolicyRoot/UC-Puglia"},{"namePolicy":"UC-ANtwerp","URLDir":"PolicyRoot/UC-ANtwerp"},{"namePolicy":"dockerPolicy","URLDir":"PolicyRoot/dockerPolicy"}]}
+2017-12-13 13:27:09 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:27:09 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:27:09 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:27:09 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:27:09 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:27:09 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/FTI/Default policies/DE & FTI
+2017-12-13 13:27:09 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/FTI/Default policies/DE & FTI
+2017-12-13 13:27:09 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:27:09 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:27:09 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:27:09 DEBUG DBPolicyConnection:535 - relativePath/FTI/Default policies/DE & FTI
+2017-12-13 13:27:09 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:27:09 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:09 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:10 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:10 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:10 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:4","@class":"Directory","name":"FTI","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 13 09:55:54 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:10 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:10 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:10 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:2","@class":"Directory","name":"Default policies","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 20 09:49:17 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:10 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:10 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:10 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#17:6","@class":"Policy","blockly_xml":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"Sd!zL3~3:OAn?B]KR|-.\" x=\"141\" y=\"169\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"P*|BqYmwW{U^UB+E2HcR\"><field name=\"Value\">FTI<\/field><next><block type=\"Country\" id=\"B;DtPypR6[bU6DMT2H.I\"><field name=\"Value\">DE<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>","name":"DE & FTI","value":"o:FTI c:DE 2of2 vidasrole:AnalysisSerivces 1of2","created_by":"diego.pedone@finconsgroup.com","version":1,"timestamp":"Thu Jul 20 09:49:37 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:10 DEBUG DBPolicyConnection:285 - Check if node selected is a Directory or a Policy
+2017-12-13 13:27:10 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:10 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:11 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:11 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:11 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:11 DEBUG DBPolicyConnection:301 - Node selected is a Policy
+2017-12-13 13:27:11 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:11 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:11 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:11 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:11 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:11 DEBUG Dispatcher:93 - Get information about the policy requested
+2017-12-13 13:27:11 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"Sd!zL3~3:OAn?B]KR|-.\" x=\"141\" y=\"169\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"P*|BqYmwW{U^UB+E2HcR\"><field name=\"Value\">FTI<\/field><next><block type=\"Country\" id=\"B;DtPypR6[bU6DMT2H.I\"><field name=\"Value\">DE<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>","policy":"o:FTI c:DE 2of2 vidasrole:AnalysisSerivces 1of2"}
+2017-12-13 13:27:11 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:27:11 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:27:11 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:27:11 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:27:11 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:27:11 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/FTI/Default policies/DE & FTI
+2017-12-13 13:27:11 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/FTI/Default policies/DE & FTI
+2017-12-13 13:27:11 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:27:11 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:27:11 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:27:11 DEBUG DBPolicyConnection:535 - relativePath/FTI/Default policies/DE & FTI
+2017-12-13 13:27:11 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:27:11 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:11 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:12 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:12 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:12 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:4","@class":"Directory","name":"FTI","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 13 09:55:54 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:12 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:12 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:12 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:2","@class":"Directory","name":"Default policies","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 20 09:49:17 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:12 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:12 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:12 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#17:6","@class":"Policy","blockly_xml":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"Sd!zL3~3:OAn?B]KR|-.\" x=\"141\" y=\"169\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"P*|BqYmwW{U^UB+E2HcR\"><field name=\"Value\">FTI<\/field><next><block type=\"Country\" id=\"B;DtPypR6[bU6DMT2H.I\"><field name=\"Value\">DE<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>","name":"DE & FTI","value":"o:FTI c:DE 2of2 vidasrole:AnalysisSerivces 1of2","created_by":"diego.pedone@finconsgroup.com","version":1,"timestamp":"Thu Jul 20 09:49:37 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:12 DEBUG DBPolicyConnection:285 - Check if node selected is a Directory or a Policy
+2017-12-13 13:27:12 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:12 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:13 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:13 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:13 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:13 DEBUG DBPolicyConnection:301 - Node selected is a Policy
+2017-12-13 13:27:13 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:13 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:13 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:13 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:13 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:13 DEBUG Dispatcher:93 - Get information about the policy requested
+2017-12-13 13:27:13 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"Sd!zL3~3:OAn?B]KR|-.\" x=\"141\" y=\"169\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"P*|BqYmwW{U^UB+E2HcR\"><field name=\"Value\">FTI<\/field><next><block type=\"Country\" id=\"B;DtPypR6[bU6DMT2H.I\"><field name=\"Value\">DE<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>","policy":"o:FTI c:DE 2of2 vidasrole:AnalysisSerivces 1of2"}
+2017-12-13 13:27:19 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:27:19 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:27:19 INFO  AESencrpPS:59 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:27:19 DEBUG CustomVerifier:117 - external Sign Verified
+2017-12-13 13:27:19 DEBUG CustomVerifier:125 - internal Sign Verified
+2017-12-13 13:27:19 DEBUG CustomVerifier:62 - myURL: /PSY_PolicySService/FTI/Default policies/DE & FTI
+2017-12-13 13:27:19 DEBUG CustomVerifier:63 - url: /PSY_PolicySService/FTI/Default policies/DE & FTI
+2017-12-13 13:27:19 DEBUG CustomVerifier:64 - myMethod: GET
+2017-12-13 13:27:19 DEBUG CustomVerifier:65 - method: GET
+2017-12-13 13:27:19 INFO  Dispatcher:56 - Start getPolicies from DB
+2017-12-13 13:27:19 DEBUG DBPolicyConnection:535 - relativePath/FTI/Default policies/DE & FTI
+2017-12-13 13:27:19 DEBUG DBPolicyConnection:158 - getRoot method start...
+2017-12-13 13:27:19 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:19 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:20 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:20 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:20 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:4","@class":"Directory","name":"FTI","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 13 09:55:54 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:20 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:20 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:20 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#15:2","@class":"Directory","name":"Default policies","created_by":"diego.pedone@finconsgroup.com","timestamp":"Thu Jul 20 09:49:17 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:20 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:20 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:20 DEBUG DBPolicyConnection:565 - {"data":[{"@rid":"#17:6","@class":"Policy","blockly_xml":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"Sd!zL3~3:OAn?B]KR|-.\" x=\"141\" y=\"169\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"P*|BqYmwW{U^UB+E2HcR\"><field name=\"Value\">FTI<\/field><next><block type=\"Country\" id=\"B;DtPypR6[bU6DMT2H.I\"><field name=\"Value\">DE<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>","name":"DE & FTI","value":"o:FTI c:DE 2of2 vidasrole:AnalysisSerivces 1of2","created_by":"diego.pedone@finconsgroup.com","version":1,"timestamp":"Thu Jul 20 09:49:37 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:20 DEBUG DBPolicyConnection:285 - Check if node selected is a Directory or a Policy
+2017-12-13 13:27:20 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:20 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:20 DEBUG DBPolicyConnection:301 - Node selected is a Policy
+2017-12-13 13:27:20 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:20 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:20 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:20 DEBUG Dispatcher:93 - Get information about the policy requested
+2017-12-13 13:27:20 INFO  Dispatcher:123 - Get element from DB sucessfull completed.{"code":200,"xmlPolicy":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"and_condition\" id=\"Sd!zL3~3:OAn?B]KR|-.\" x=\"141\" y=\"169\"><statement name=\"CONDITION\"><block type=\"Organization\" id=\"P*|BqYmwW{U^UB+E2HcR\"><field name=\"Value\">FTI<\/field><next><block type=\"Country\" id=\"B;DtPypR6[bU6DMT2H.I\"><field name=\"Value\">DE<\/field><\/block><\/next><\/block><\/statement><\/block><\/xml>","policy":"o:FTI c:DE 2of2 vidasrole:AnalysisSerivces 1of2"}

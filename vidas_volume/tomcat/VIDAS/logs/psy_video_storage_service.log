@@ -1,0 +1,612 @@
+2017-12-13 13:24:50 INFO  VideoStorageRestletApplication:26 - Called the createInboundRoot restlet method...
+2017-12-13 13:24:50 INFO  VideoStorageRestletApplication:33 - Created the Restlet CustomVerifier...
+2017-12-13 13:24:50 INFO  VideoStorageRestletApplication:47 - Created and returned the Restlet Context with url-resource association...
+2017-12-13 13:24:50 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:50 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:50 INFO  PropertiesHelper:17 - Loading configuration parameters...
+2017-12-13 13:24:50 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:24:51 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:24:51 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:24:51 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:24:51 DEBUG NodeResources:235 - path Url FileFINCONS_SpA
+2017-12-13 13:24:51 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:24:51 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:51 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:52 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:52 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:52 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:52 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:52 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:53 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:53 DEBUG DBConnection:205 - relativePathFINCONS_SpA
+2017-12-13 13:24:53 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:24:53 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:53 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:53 DEBUG DBConnection:225 - dir: FINCONS_SpA
+2017-12-13 13:24:53 DEBUG DBConnection:226 - params: {father=#21:21, name=FINCONS_SpA}
+2017-12-13 13:24:53 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:24:53 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:53 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:53 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:20","@class":"Video_Directory","name":"FINCONS_SpA","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:26 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:53 INFO  NodeResources:256 - case VideoDir
+2017-12-13 13:24:53 DEBUG DBConnection:307 - Get SubNode
+2017-12-13 13:24:53 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:53 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:53 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:53 DEBUG NodeResources:382 - Get content of the folder requested
+2017-12-13 13:24:53 INFO  NodeResources:342 - Get element from DB sucessfull completed.
+2017-12-13 13:24:55 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:55 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:55 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:24:55 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:24:55 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:24:55 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:24:55 DEBUG NodeResources:235 - path Url FileFINCONS_SpA/2017-02-21
+2017-12-13 13:24:55 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:24:55 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:55 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:55 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:55 DEBUG DBConnection:205 - relativePathFINCONS_SpA/2017-02-21
+2017-12-13 13:24:55 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:24:55 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:55 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:55 DEBUG DBConnection:225 - dir: FINCONS_SpA
+2017-12-13 13:24:55 DEBUG DBConnection:226 - params: {father=#21:21, name=FINCONS_SpA}
+2017-12-13 13:24:55 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:24:55 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:55 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:55 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:20","@class":"Video_Directory","name":"FINCONS_SpA","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:26 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:55 DEBUG DBConnection:225 - dir: 2017-02-21
+2017-12-13 13:24:55 DEBUG DBConnection:226 - params: {father=#22:20, name=2017-02-21}
+2017-12-13 13:24:55 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:24:55 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:55 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:56 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:56 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:56 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:56 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:22","@class":"Video_Directory","name":"2017-02-21","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:27 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:56 INFO  NodeResources:256 - case VideoDir
+2017-12-13 13:24:56 DEBUG DBConnection:307 - Get SubNode
+2017-12-13 13:24:56 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:56 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:56 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:56 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:56 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:56 DEBUG NodeResources:382 - Get content of the folder requested
+2017-12-13 13:24:56 INFO  NodeResources:342 - Get element from DB sucessfull completed.
+2017-12-13 13:24:57 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:57 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:57 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:24:57 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:24:57 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:24:57 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:24:57 DEBUG NodeResources:235 - path Url FileFINCONS_SpA/2017-02-21/FTI
+2017-12-13 13:24:57 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:24:57 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:57 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:57 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:57 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:57 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:57 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:57 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:58 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:58 DEBUG DBConnection:205 - relativePathFINCONS_SpA/2017-02-21/FTI
+2017-12-13 13:24:58 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:24:58 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:58 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:58 DEBUG DBConnection:225 - dir: FINCONS_SpA
+2017-12-13 13:24:58 DEBUG DBConnection:226 - params: {father=#21:21, name=FINCONS_SpA}
+2017-12-13 13:24:58 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:24:58 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:58 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:58 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:20","@class":"Video_Directory","name":"FINCONS_SpA","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:26 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:58 DEBUG DBConnection:225 - dir: 2017-02-21
+2017-12-13 13:24:58 DEBUG DBConnection:226 - params: {father=#22:20, name=2017-02-21}
+2017-12-13 13:24:58 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:24:58 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:58 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:58 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:22","@class":"Video_Directory","name":"2017-02-21","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:27 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:58 DEBUG DBConnection:225 - dir: FTI
+2017-12-13 13:24:58 DEBUG DBConnection:226 - params: {father=#21:22, name=FTI}
+2017-12-13 13:24:58 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:24:58 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:58 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:58 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:21","@class":"Video_Directory","name":"FTI","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:28 UTC 2017"}],"status":"OK"}
+2017-12-13 13:24:58 INFO  NodeResources:256 - case VideoDir
+2017-12-13 13:24:58 DEBUG DBConnection:307 - Get SubNode
+2017-12-13 13:24:58 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:58 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:58 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:58 DEBUG NodeResources:382 - Get content of the folder requested
+2017-12-13 13:24:58 INFO  NodeResources:342 - Get element from DB sucessfull completed.
+2017-12-13 13:24:59 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:24:59 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:24:59 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:24:59 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:24:59 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:24:59 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:24:59 DEBUG NodeResources:235 - path Url FileFINCONS_SpA/2017-02-21/FTI
+2017-12-13 13:24:59 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:24:59 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:59 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:59 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:24:59 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:24:59 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:24:59 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:24:59 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:00 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:00 DEBUG DBConnection:205 - relativePathFINCONS_SpA/2017-02-21/FTI
+2017-12-13 13:25:00 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:25:00 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:25:00 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:25:00 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:25:00 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:25:00 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:25:00 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:25:00 DEBUG NodeResources:235 - path Url FileFINCONS_SpA/2017-02-21/FTI
+2017-12-13 13:25:00 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:25:00 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:00 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:00 DEBUG DBConnection:225 - dir: FINCONS_SpA
+2017-12-13 13:25:00 DEBUG DBConnection:226 - params: {father=#21:21, name=FINCONS_SpA}
+2017-12-13 13:25:00 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:00 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:00 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:00 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:00 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:20","@class":"Video_Directory","name":"FINCONS_SpA","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:26 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:00 DEBUG DBConnection:225 - dir: 2017-02-21
+2017-12-13 13:25:00 DEBUG DBConnection:226 - params: {father=#22:20, name=2017-02-21}
+2017-12-13 13:25:00 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:00 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:00 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:00 DEBUG DBConnection:205 - relativePathFINCONS_SpA/2017-02-21/FTI
+2017-12-13 13:25:00 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:25:00 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:00 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:01 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:01 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:22","@class":"Video_Directory","name":"2017-02-21","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:27 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:01 DEBUG DBConnection:225 - dir: FTI
+2017-12-13 13:25:01 DEBUG DBConnection:226 - params: {father=#21:22, name=FTI}
+2017-12-13 13:25:01 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:01 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:01 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:01 DEBUG DBConnection:225 - dir: FINCONS_SpA
+2017-12-13 13:25:01 DEBUG DBConnection:226 - params: {father=#21:21, name=FINCONS_SpA}
+2017-12-13 13:25:01 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:01 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:01 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:01 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:21","@class":"Video_Directory","name":"FTI","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:28 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:01 INFO  NodeResources:256 - case VideoDir
+2017-12-13 13:25:01 DEBUG DBConnection:307 - Get SubNode
+2017-12-13 13:25:01 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:01 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:01 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:20","@class":"Video_Directory","name":"FINCONS_SpA","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:26 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:01 DEBUG DBConnection:225 - dir: 2017-02-21
+2017-12-13 13:25:01 DEBUG DBConnection:226 - params: {father=#22:20, name=2017-02-21}
+2017-12-13 13:25:01 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:01 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:01 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:01 DEBUG NodeResources:382 - Get content of the folder requested
+2017-12-13 13:25:01 INFO  NodeResources:342 - Get element from DB sucessfull completed.
+2017-12-13 13:25:01 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:01 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:01 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:22","@class":"Video_Directory","name":"2017-02-21","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:27 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:01 DEBUG DBConnection:225 - dir: FTI
+2017-12-13 13:25:01 DEBUG DBConnection:226 - params: {father=#21:22, name=FTI}
+2017-12-13 13:25:01 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:01 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:01 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:02 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:02 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:02 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:02 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:21","@class":"Video_Directory","name":"FTI","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:28 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:02 INFO  NodeResources:256 - case VideoDir
+2017-12-13 13:25:02 DEBUG DBConnection:307 - Get SubNode
+2017-12-13 13:25:02 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:02 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:02 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:02 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:02 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:02 DEBUG NodeResources:382 - Get content of the folder requested
+2017-12-13 13:25:02 INFO  NodeResources:342 - Get element from DB sucessfull completed.
+2017-12-13 13:25:02 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:25:02 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:25:02 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:25:02 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:25:02 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:25:02 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:25:02 DEBUG NodeResources:235 - path Url FileFINCONS_SpA/2017-02-21/FTI/CABIN
+2017-12-13 13:25:02 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:25:02 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:02 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:03 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:03 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:03 DEBUG DBConnection:205 - relativePathFINCONS_SpA/2017-02-21/FTI/CABIN
+2017-12-13 13:25:03 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:25:03 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:03 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:03 DEBUG DBConnection:225 - dir: FINCONS_SpA
+2017-12-13 13:25:03 DEBUG DBConnection:226 - params: {father=#21:21, name=FINCONS_SpA}
+2017-12-13 13:25:03 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:03 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:03 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:03 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:20","@class":"Video_Directory","name":"FINCONS_SpA","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:26 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:03 DEBUG DBConnection:225 - dir: 2017-02-21
+2017-12-13 13:25:03 DEBUG DBConnection:226 - params: {father=#22:20, name=2017-02-21}
+2017-12-13 13:25:03 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:03 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:03 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:03 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:03 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:22","@class":"Video_Directory","name":"2017-02-21","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:27 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:04 DEBUG DBConnection:225 - dir: FTI
+2017-12-13 13:25:04 DEBUG DBConnection:226 - params: {father=#21:22, name=FTI}
+2017-12-13 13:25:04 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:04 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:04 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:04 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:04 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:04 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:04 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:21","@class":"Video_Directory","name":"FTI","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:28 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:04 DEBUG DBConnection:225 - dir: CABIN
+2017-12-13 13:25:04 DEBUG DBConnection:226 - params: {father=#22:21, name=CABIN}
+2017-12-13 13:25:04 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:04 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:04 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:04 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:04 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:04 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:04 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:23","@class":"Video_Directory","name":"CABIN","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:30 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:04 INFO  NodeResources:256 - case VideoDir
+2017-12-13 13:25:04 DEBUG DBConnection:307 - Get SubNode
+2017-12-13 13:25:04 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:04 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:04 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:04 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:04 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:04 DEBUG NodeResources:382 - Get content of the folder requested
+2017-12-13 13:25:04 INFO  NodeResources:342 - Get element from DB sucessfull completed.
+2017-12-13 13:25:05 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:25:05 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:25:05 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:25:05 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:25:05 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:25:05 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:25:05 DEBUG NodeResources:235 - path Url FileFINCONS_SpA/2017-02-21/FTI/CABIN/Camera FC Cabin
+2017-12-13 13:25:05 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:25:05 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:05 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:05 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:05 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:05 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:05 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:05 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:06 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:06 DEBUG DBConnection:205 - relativePathFINCONS_SpA/2017-02-21/FTI/CABIN/Camera FC Cabin
+2017-12-13 13:25:06 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:25:06 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:06 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:06 DEBUG DBConnection:225 - dir: FINCONS_SpA
+2017-12-13 13:25:06 DEBUG DBConnection:226 - params: {father=#21:21, name=FINCONS_SpA}
+2017-12-13 13:25:06 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:06 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:06 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:06 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:20","@class":"Video_Directory","name":"FINCONS_SpA","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:26 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:06 DEBUG DBConnection:225 - dir: 2017-02-21
+2017-12-13 13:25:06 DEBUG DBConnection:226 - params: {father=#22:20, name=2017-02-21}
+2017-12-13 13:25:06 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:06 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:06 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:06 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:22","@class":"Video_Directory","name":"2017-02-21","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:27 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:06 DEBUG DBConnection:225 - dir: FTI
+2017-12-13 13:25:06 DEBUG DBConnection:226 - params: {father=#21:22, name=FTI}
+2017-12-13 13:25:06 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:06 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:06 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:06 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:21","@class":"Video_Directory","name":"FTI","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:28 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:06 DEBUG DBConnection:225 - dir: CABIN
+2017-12-13 13:25:06 DEBUG DBConnection:226 - params: {father=#22:21, name=CABIN}
+2017-12-13 13:25:06 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:06 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:06 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:06 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:06 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:23","@class":"Video_Directory","name":"CABIN","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:30 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:06 DEBUG DBConnection:225 - dir: Camera FC Cabin
+2017-12-13 13:25:06 DEBUG DBConnection:226 - params: {father=#21:23, name=Camera FC Cabin}
+2017-12-13 13:25:06 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:25:06 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:07 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:07 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:07 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:07 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:07 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:22","@class":"Video_Directory","name":"Camera FC Cabin","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:31 UTC 2017"}],"status":"OK"}
+2017-12-13 13:25:07 INFO  NodeResources:256 - case VideoDir
+2017-12-13 13:25:07 DEBUG DBConnection:307 - Get SubNode
+2017-12-13 13:25:07 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:07 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:25:07 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:25:07 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:25:07 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:25:07 DEBUG NodeResources:382 - Get content of the folder requested
+2017-12-13 13:25:07 INFO  NodeResources:342 - Get element from DB sucessfull completed.
+2017-12-13 13:26:16 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:26:16 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:26:16 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:26:16 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:26:16 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:26:16 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:26:16 DEBUG NodeResources:235 - path Url FileFINCONS_SpA/2017-02-21/FTI/CABIN/Camera FC Cabin/20171213123318_Circolare N 1_2017 - Chisure Aziendali(1).pdf
+2017-12-13 13:26:16 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:26:16 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:16 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:16 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:26:16 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:26:16 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:26:16 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:16 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:16 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:26:16 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:26:16 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:26:16 DEBUG DBConnection:205 - relativePathFINCONS_SpA/2017-02-21/FTI/CABIN/Camera FC Cabin/20171213123318_Circolare N 1_2017 - Chisure Aziendali(1).pdf
+2017-12-13 13:26:16 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:26:16 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:16 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:26:17 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:26:17 DEBUG DBConnection:225 - dir: FINCONS_SpA
+2017-12-13 13:26:17 DEBUG DBConnection:226 - params: {father=#21:21, name=FINCONS_SpA}
+2017-12-13 13:26:17 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:26:17 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:26:17 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:26:17 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:20","@class":"Video_Directory","name":"FINCONS_SpA","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:26 UTC 2017"}],"status":"OK"}
+2017-12-13 13:26:17 DEBUG DBConnection:225 - dir: 2017-02-21
+2017-12-13 13:26:17 DEBUG DBConnection:226 - params: {father=#22:20, name=2017-02-21}
+2017-12-13 13:26:17 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:26:17 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:26:17 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:26:17 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:22","@class":"Video_Directory","name":"2017-02-21","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:27 UTC 2017"}],"status":"OK"}
+2017-12-13 13:26:17 DEBUG DBConnection:225 - dir: FTI
+2017-12-13 13:26:17 DEBUG DBConnection:226 - params: {father=#21:22, name=FTI}
+2017-12-13 13:26:17 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:26:17 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:26:17 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:26:17 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:21","@class":"Video_Directory","name":"FTI","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:28 UTC 2017"}],"status":"OK"}
+2017-12-13 13:26:17 DEBUG DBConnection:225 - dir: CABIN
+2017-12-13 13:26:17 DEBUG DBConnection:226 - params: {father=#22:21, name=CABIN}
+2017-12-13 13:26:17 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:26:17 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:26:17 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:26:17 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:23","@class":"Video_Directory","name":"CABIN","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:30 UTC 2017"}],"status":"OK"}
+2017-12-13 13:26:17 DEBUG DBConnection:225 - dir: Camera FC Cabin
+2017-12-13 13:26:17 DEBUG DBConnection:226 - params: {father=#21:23, name=Camera FC Cabin}
+2017-12-13 13:26:17 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:26:17 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:26:17 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:26:17 DEBUG DBConnection:231 - {"data":[{"@rid":"#22:22","@class":"Video_Directory","name":"Camera FC Cabin","created_by":"leonardo.straniero@finconsgroup.com","timestamp":"Wed Dec 13 10:33:31 UTC 2017"}],"status":"OK"}
+2017-12-13 13:26:17 DEBUG DBConnection:225 - dir: 20171213123318_Circolare N 1_2017 - Chisure Aziendali(1).pdf
+2017-12-13 13:26:17 DEBUG DBConnection:226 - params: {father=#22:22, name=20171213123318_Circolare N 1_2017 - Chisure Aziendali(1).pdf}
+2017-12-13 13:26:17 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:26:17 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:17 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:26:18 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:26:18 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:26:18 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:26:18 DEBUG DBConnection:231 - {"data":[{"storage_type":"embedded","fm_filename":"Circolare N 1_2017 - Chisure Aziendali(1).pdf","fm_date":"2017-02-21","fm_lastTimestamp":"1487694158541","keyInfo_metadata_expiration-date":"2017-12-13T11:33:24Z","keyInfo_sp_encryptor":"ABE_PROXY","fm_cameraName":"Camera FC Cabin","type":"application/pdf","real_path_file":"/opt/VIDAS/Video/FINCONS_SpA/2017-02-21/FTI/CABIN/Camera FC Cabin/NcO9n_C_3SI_Circolare N 1_2017 - Chisure Aziendali(1).pdf.vidas","fm_firstTimestamp":"1487694099401","fm_port":"15011","@rid":"#23:25","fm_tailNumber":"DEMO","keyInfo_metadata_protection-mechanism":"CP-ABE(AES)","keyInfo_metadata_encryptor":"ABE_PROXY","enc_sym_key_id":"c054172e_9aed_40a9_8094_55f5101bbb85","fm_flightNumber":"FTI","@class":"Video","sizeFile":37007,"totalSlice":1,"sizeFileEnc":37008,"keyInfo_sp_encrypted_key":"AAAAgJwjKjW6wRMgZRgwqx4B7ehPqNIRRBUCSqBa0H74jx-BxIvp5bJfVx_no6_TZ41hUqRXCgV589fWG-YWn0ex4ApltMcmu7DWktTkMX30O4SGOnCAIbbaBL6gehWdh01cus-bVNRmTQjNhzD5_uS98gQ6bcmCmBd_ukmWiYDe5yRVAAAAgHTy-G7PW7QV5pEd_lEZxAPDmXjN5kk05ESl_SS1feaXMGZEZKEJNw-Zr4yBUWIARlZWBaREa0PDkXD2_aP9NdA4U4uCz6UZss3Js3X-emvo1-zni8_FFY5WdMTtUQWcVziRAYMss-k4hfYVx6xHHfo-i0KPwhih71tXsVgzYGNDAAAAAQAAAAIAAAACAAAAAgAAAAEAAAAAAAAABGM6SVQAAACAV7rFQkuwe7Iif201n-X6WBawPXLtQb_s9Lbgse5_9uinxC86GD_iahpCe-d9ydG-y_A4sEvX29AfQTrSP9tqSgip2CqblgJ46OZTOGchn8clt0fD1hmlIGhlsEcx9qBWIxEYFI9lXApqvI7q_4nGr2lNj0iNyl2A12kw-ib-tJYAAACARYxiomOTLfFDax8YSCh8H2oDiISABPHZIdJIWQhOxEGIt4UOn_LbqBkwqBTXRinmqyrV9livie8rX-fw08CchIIIaJDglntdll9ezmdGe8jUGxN0hUhmwfwV2AIYoU3dYchAac0bIa1uXvVRhPhImeKO4eG3XE4-d8CmSS4VkH8AAAABAAAAAAAAAA1vOkZJTkNPTlNfU3BBAAAAgFEJzJH2gAyjMvtEuVlV0xHXaH7GMXcyu8iiE9u5qEtjKANAYEUxOdxGNEpoqOVRAavemwcr55OszHdzUoRRKW1cC1_So8qIHDXB94zOUHeQ9aPFwpdts0L712QBZAixvgg0SKVOXimgxQlF_4HHEtt3m-sF5WpozgMhnpKdmVzcAAAAgJKlPbfobC1O2IqCgteirVjnZztydpSE4HgJDuoVjFHtEENa-46FdLZsuWqfCL40tduBXgwNqf4U1U1MAnPBf-5dfx3NC_TeR31d-lWmq7tkoKvF8WpRqf1yObTFBerhXh9e43E3df_MXFIz3AesF9gNtpbXGUJwguF0XphqELHvAAAAAQAAAAAAAAAadmlkYXNyb2xlOkFuYWx5c2lzU2VyaXZjZXMAAACALm71h2oy1cxZJ64Zre6N24SglMtT3RLSC4Nig1MCphaYjoIUs8axxKuTPLWh7Cv18yflfhjFhK8B48b_GiLIByVLbM6EeHm6fP7UCXyiw2SyKHIX37jApQK5dHNNWWOYZ9SCJ3GaPFsHrAubvh8BCDbFpes8VkinBsr8qXtGrSsAAACAQV3p4n3pLTStvyGPokTWyYdNC4YTeKKZRlTmjOxEde36MsjVpCvOMmacmLFxloCoufHr9fgePjms6a9WCGH0wXfJupWLkFnVK4m5S-oe7-QuBMsicPrNkWumCPpSw_tReT0Qh89oeiUTAAwrw_a5t7JxVKbfuwh-mfVCcWgE2pw G6Dztz9r21gEDh5WXjv6eIqrJ-ipjFyyoCOQtCDK7hg","iv":"Wo0HH3Lu2py9KkiYPSqLBw","encryptor":"leonardo.straniero@finconsgroup.com","name":"20171213123318_Circolare N 1_2017 - Chisure Aziendali(1).pdf","keyInfo_metadata_encryption-date":"2017-12-13T11:33:19Z","sizeSlice":1048568,"fm_path_file":"2017-02-21/FTI/CABIN/Camera FC Cabin","fm_cameraType":"CABIN"}],"status":"OK"}
+2017-12-13 13:26:18 INFO  NodeResources:263 - case Video
+2017-12-13 13:26:18 INFO  NodeResources:342 - Get element from DB sucessfull completed.
+2017-12-13 13:27:14 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:27:14 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:27:14 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:14 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:27:14 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:27:14 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:27:14 DEBUG NodeResources:235 - path Url FileFTI
+2017-12-13 13:27:14 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:27:14 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:14 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:15 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:122 - JSON object response successfully created
+2017-12-13 13:27:15 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:15 DEBUG DBConnection:286 - Check if node selected is a Directory or a Policy
+2017-12-13 13:27:15 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:15 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:15 DEBUG DBConnection:302 - Node selected is a Video_Directory
+2017-12-13 13:27:15 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:113 - JSON object response successfully created
+2017-12-13 13:27:15 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:15 DEBUG DBConnection:205 - relativePathFTI
+2017-12-13 13:27:15 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:27:15 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:15 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:16 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:16 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:16 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:16 DEBUG DBConnection:225 - dir: FTI
+2017-12-13 13:27:16 DEBUG DBConnection:226 - params: {father=#21:21, name=FTI}
+2017-12-13 13:27:16 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:27:16 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:16 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:16 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:16 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:16 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:16 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:24","@class":"Video_Directory","name":"FTI","created_by":"VideoService","timestamp":"Wed Dec 13 12:27:15 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:16 INFO  NodeResources:256 - case VideoDir
+2017-12-13 13:27:16 DEBUG DBConnection:307 - Get SubNode
+2017-12-13 13:27:16 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:16 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:16 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:16 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:16 DEBUG NodeResources:382 - Get content of the folder requested
+2017-12-13 13:27:16 INFO  NodeResources:342 - Get element from DB sucessfull completed.
+2017-12-13 13:27:23 INFO  TokenAuthenticator:42 - Intercepted an invocation of a protected resource, check if the JWT token is present...
+2017-12-13 13:27:23 INFO  TokenAuthenticator:51 - The JWT token is present, continue the auth process...
+2017-12-13 13:27:23 INFO  AESencrpPS:57 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:23 DEBUG CustomVerifier:128 - external Sign Verified
+2017-12-13 13:27:23 DEBUG CustomVerifier:136 - internal Sign Verified
+2017-12-13 13:27:23 INFO  NodeResources:222 - Start getVideo from DB
+2017-12-13 13:27:23 DEBUG NodeResources:235 - path Url FileFTI
+2017-12-13 13:27:23 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:27:23 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:23 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:23 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:23 DEBUG DBConnection:205 - relativePathFTI
+2017-12-13 13:27:23 DEBUG DBConnection:77 - getRoot method start...
+2017-12-13 13:27:23 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:23 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:23 DEBUG DBConnection:225 - dir: FTI
+2017-12-13 13:27:23 DEBUG DBConnection:226 - params: {father=#21:21, name=FTI}
+2017-12-13 13:27:23 DEBUG DBConnection:227 - getSon: select from V where in().@rid contains (@rid=:father) and ((name = :name and @class ='Video_Directory') or (name=:name and @class ='Video'))
+2017-12-13 13:27:23 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:23 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:24 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:24 DEBUG OrientDBManager:87 - JSON object response successfully created
+2017-12-13 13:27:24 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:24 DEBUG DBConnection:231 - {"data":[{"@rid":"#21:24","@class":"Video_Directory","name":"FTI","created_by":"VideoService","timestamp":"Wed Dec 13 12:27:15 UTC 2017"}],"status":"OK"}
+2017-12-13 13:27:24 INFO  NodeResources:256 - case VideoDir
+2017-12-13 13:27:24 DEBUG DBConnection:307 - Get SubNode
+2017-12-13 13:27:24 DEBUG OrientDBManager:33 - #### Start connection to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:24 DEBUG OrientDBManager:40 - #### Connection successfull to DB remote:orientdb.example.com/PolicyStorageDB ####
+2017-12-13 13:27:24 DEBUG OrientDBManager:60 - #### Get information from query result ####
+2017-12-13 13:27:24 DEBUG OrientDBManager:151 - #### Close Connection to DB  ####
+2017-12-13 13:27:24 DEBUG NodeResources:382 - Get content of the folder requested
+2017-12-13 13:27:24 INFO  NodeResources:342 - Get element from DB sucessfull completed.

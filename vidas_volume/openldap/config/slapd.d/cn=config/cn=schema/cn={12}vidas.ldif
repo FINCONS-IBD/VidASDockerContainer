@@ -1,0 +1,40 @@
+# AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
+# CRC32 f7cbb280
+dn: cn={12}vidas
+objectClass: olcSchemaConfig
+cn: {12}vidas
+olcAttributeTypes: {0}( 1.3.6.1.4.1.47519.10.1.1 NAME 'FINCSecurityCertifica
+ te' DESC 'This attribute stores the subject public/private keys in a FINCON
+ S defined Base64 format' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstrin
+ gsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {1}( 1.3.6.1.4.1.47519.10.1.2 NAME 'VidASRole' DESC 'This
+  attribute must be used to specify the subject role (selected among: Custom
+ erSpecialist, CustomerTechnical, CustomerHeadOfSecurityOfficer, Administrat
+ or, Supervisor)' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch 
+ SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {2}( 1.3.6.1.4.1.47519.10.1.3 NAME 'ViDASAgentID' DESC 'T
+ his attribute unambiguously identifies a Video Analysis Service process wit
+ hin the system' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch S
+ YNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {3}( 1.3.6.1.4.1.47519.10.1.4 NAME 'ViDASAgentReferencePe
+ rson' DESC 'This attribute specifies the DN of a the reference person for t
+ his specific ViDAS Agent' EQUALITY distinguishedNameMatch SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.12 )
+olcAttributeTypes: {4}( 1.3.6.1.4.1.47519.10.1.5 NAME 'ViDASUserDefaultPolic
+ y' DESC 'This attribute specifies the URL of the default policy associated 
+ to a VidAS User' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch 
+ SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcObjectClasses: {0}( 1.3.6.1.4.1.47519.10.2.1 NAME 'VidASUser' DESC 'FTI V
+ ideo Analysis Service user' SUP inetOrgPerson STRUCTURAL MUST ( FINCSecurit
+ yCertificate $ VidASRole $ Mail ) MAY ViDASUserDefaultPolicy )
+olcObjectClasses: {1}( 1.3.6.1.4.1.47519.10.2.2 NAME 'VidASAgent' DESC 'FTI 
+ Video Analysis Service process' SUP top STRUCTURAL MUST ( ViDASAgentID $ FI
+ NCSecurityCertificate $ Mail ) MAY ( CommonName $ ViDASAgentReferencePerson
+  ) )
+structuralObjectClass: olcSchemaConfig
+entryUUID: e170f5ba-6e25-1037-826e-6d8c19738b9b
+creatorsName: cn=config
+createTimestamp: 20171205163416Z
+entryCSN: 20171205163416.917804Z#000000#000#000000
+modifiersName: cn=config
+modifyTimestamp: 20171205163416Z

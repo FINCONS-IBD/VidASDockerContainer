@@ -1,0 +1,742 @@
+2017-12-13 13:23:42 DEBUG TokenServiceRestletApplication:25 - Create the H2 Database connection and the Users Table
+2017-12-13 13:23:42 INFO  PropertiesHelper:17 - Loading configuration parameters...
+2017-12-13 13:23:42 DEBUG H2DatabaseEmbedded:26 - Create new connection. Connection parameters:
+DB URL jdbc:h2:mem:~/databaseH2;DB_CLOSE_DELAY=-1
+DB User sa
+2017-12-13 13:23:43 DEBUG H2DatabaseEmbedded:65 - Statement: prep0: CREATE TABLE IF NOT EXISTS Users ( username VARCHAR PRIMARY KEY, userSecret VARCHAR, validityTime TIMESTAMP, challengeID BIGINT, timestamp TIMESTAMP )
+2017-12-13 13:23:43 DEBUG H2DatabaseEmbedded:68 - runStatement: prep0: CREATE TABLE IF NOT EXISTS Users ( username VARCHAR PRIMARY KEY, userSecret VARCHAR, validityTime TIMESTAMP, challengeID BIGINT, timestamp TIMESTAMP )
+2017-12-13 13:23:43 INFO  TokenServiceRestletApplication:37 - Created and returned the Restlet Context with url-resource association...
+2017-12-13 13:23:43 INFO  UserDataResourceImpl:72 - Called the getUserData method with following parameters: diego.pedone@finconsgroup.com
+2017-12-13 13:23:43 INFO  UserDataResourceImpl:88 - Calling Chek User on DB and LDAP...
+2017-12-13 13:23:43 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:23:43 DEBUG LdapManager:39 - LDAP Connection params: ldap://openldap.example.com:389, cn=admin,dc=FTIVidAS
+2017-12-13 13:23:43 DEBUG LdapManager:47 - Initialize the DS Contex...
+2017-12-13 13:23:43 ERROR LdapManager:50 - Connected to the context: {java.naming.provider.url=ldap://openldap.example.com:389, java.naming.factory.initial=com.sun.jndi.ldap.LdapCtxFactory, java.naming.factory.url.pkgs=org.apache.naming, java.naming.security.principal=cn=admin,dc=FTIVidAS, java.naming.security.authentication=simple, java.naming.security.credentials=Sysmgr48}
+2017-12-13 13:23:43 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:23:43 DEBUG UserDataResourceImpl:115 - Update the old user information...
+2017-12-13 13:23:43 DEBUG H2DatabaseEmbedded:85 - doQuery: prep1: SELECT count(*) as numUtenti FROM  Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:23:43 DEBUG UserDataResourceImpl:121 - Retrieve the public key from user certificate...
+2017-12-13 13:23:44 DEBUG UserDataResourceImpl:128 - Public key generate successful...
+2017-12-13 13:23:44 DEBUG UserDataResourceImpl:131 - Effimeral key generation...
+2017-12-13 13:23:44 DEBUG UserDataResourceImpl:138 - Effimeral Key generate successful...
+2017-12-13 13:23:44 DEBUG UserDataResourceImpl:141 - UserSecret generation...
+2017-12-13 13:23:45 DEBUG UserDataResourceImpl:147 - UserSecret generate successful...
+2017-12-13 13:23:45 DEBUG H2DatabaseEmbedded:85 - doQuery: prep2: SELECT count(*) as numUtenti FROM  Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:23:45 DEBUG H2DatabaseEmbedded:65 - Statement: prep3: insert into Users values ( ?, ?, ?, ? ,?) {1: 'diego.pedone@finconsgroup.com', 2: 'wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ', 3: TIMESTAMP '2017-12-13 16:23:45.0', 4: 543200244, 5: TIMESTAMP '2017-12-13 13:23:45.0'}
+2017-12-13 13:23:45 DEBUG H2DatabaseEmbedded:68 - runStatement: prep3: insert into Users values ( ?, ?, ?, ? ,?) {1: 'diego.pedone@finconsgroup.com', 2: 'wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ', 3: TIMESTAMP '2017-12-13 16:23:45.0', 4: 543200244, 5: TIMESTAMP '2017-12-13 13:23:45.0'}
+2017-12-13 13:23:45 INFO  H2DatabaseOperation:86 - New User diego.pedone@finconsgroup.com Inserted
+2017-12-13 13:23:45 INFO  UserDataResourceImpl:154 - UserSecret and UserData persisted into H2 DB...
+2017-12-13 13:23:45 INFO  CryptUtil:92 - HMAC generation successful completed...
+2017-12-13 13:23:45 DEBUG UserDataResourceImpl:163 - Json Response successful created...
+2017-12-13 13:23:45 INFO  UserDataResourceImpl:211 - getUserSecret service successful completed. The serivce return code 200
+2017-12-13 13:23:48 DEBUG LoginResourceJson:78 - Check username in H2 DB: diego.pedone@finconsgroup.com
+2017-12-13 13:23:48 DEBUG H2DatabaseEmbedded:85 - doQuery: prep4: SELECT count(*) as numUtenti FROM  Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:23:48 DEBUG LoginResourceJson:91 - Retrieve the username from H2 DB: diego.pedone@finconsgroup.com
+2017-12-13 13:23:48 DEBUG H2DatabaseEmbedded:85 - doQuery: prep5: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:23:48 DEBUG LoginResourceJson:112 - internal Sign Verified
+2017-12-13 13:23:48 DEBUG LoginResourceJson:122 - external Sign Verified
+2017-12-13 13:23:48 INFO  LoginResourceJson:134 - Token signatures comparison sucessful completed. The service return status 200 and message "Login sucessful completed"
+2017-12-13 13:23:48 INFO  CryptUtil:92 - HMAC generation successful completed...
+2017-12-13 13:23:48 INFO  LdapManager:69 - Called the addEntry() method: {"privateKey":"7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z","salt":"a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412","publicKey":{"ext":true,"kty":"EC","crv":"P-256","key_ops":[],"x":"hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw","y":"E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE"}}
+2017-12-13 13:23:48 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:23:49 INFO  LdapManager:89 - Modify Entity succesfull OK.
+2017-12-13 13:23:52 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:23:52 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:23:52 DEBUG H2DatabaseEmbedded:85 - doQuery: prep6: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:23:52 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:23:52 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:23:52 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:23:52 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:23:52 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:23:52 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:23:52 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:23:52 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:23:52 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:23:52 INFO  AESencrp:23 - Called the encrypt method...wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ
+2017-12-13 13:23:52 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:23:52 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:23:52 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:23:52 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:02 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:02 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:02 DEBUG H2DatabaseEmbedded:85 - doQuery: prep7: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:02 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:02 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:02 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:02 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:02 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:02 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:02 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:02 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:24:02 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:02 INFO  AESencrp:23 - Called the encrypt method...wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ
+2017-12-13 13:24:02 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:02 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:02 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:02 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:06 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:06 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:06 DEBUG H2DatabaseEmbedded:85 - doQuery: prep8: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:06 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:06 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:06 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:06 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:06 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:06 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:06 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:06 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:24:06 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:06 INFO  AESencrp:23 - Called the encrypt method...wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ
+2017-12-13 13:24:06 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:06 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:06 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:06 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:08 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:08 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:08 DEBUG H2DatabaseEmbedded:85 - doQuery: prep9: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:08 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:08 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:08 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:08 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:08 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:08 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:08 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:08 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:24:08 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:08 INFO  AESencrp:23 - Called the encrypt method...wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ
+2017-12-13 13:24:08 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:08 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:08 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:08 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:12 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:12 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:12 DEBUG H2DatabaseEmbedded:85 - doQuery: prep10: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:12 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:12 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:12 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:12 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:12 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:12 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:12 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:12 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:24:12 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:12 INFO  AESencrp:23 - Called the encrypt method...wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ
+2017-12-13 13:24:12 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:12 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:12 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:12 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:15 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:15 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:15 DEBUG H2DatabaseEmbedded:85 - doQuery: prep11: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:15 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:15 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:15 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:15 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:15 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:15 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:15 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:15 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:24:15 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:15 INFO  AESencrp:23 - Called the encrypt method...wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ
+2017-12-13 13:24:15 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:15 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:15 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:15 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:22 DEBUG H2DatabaseEmbedded:85 - doQuery: prep12: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:22 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:22 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:22 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:22 INFO  AESencrp:23 - Called the encrypt method...wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ
+2017-12-13 13:24:22 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:22 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:22 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:22 DEBUG H2DatabaseEmbedded:85 - doQuery: prep13: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:22 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:22 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:22 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:22 INFO  AESencrp:23 - Called the encrypt method...wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ
+2017-12-13 13:24:22 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:22 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:22 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:22 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:25 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:25 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:25 DEBUG H2DatabaseEmbedded:85 - doQuery: prep14: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:25 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:25 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:25 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:25 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:25 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:25 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:25 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:25 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:24:25 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:25 INFO  AESencrp:23 - Called the encrypt method...wCs9xa-UPZLfczHrP4Ja5X96KDIDdtEOjZGnHgP4PGQ
+2017-12-13 13:24:25 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:24:25 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:25 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:25 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:32 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:32 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:32 DEBUG H2DatabaseEmbedded:85 - doQuery: prep15: SELECT * FROM Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:32 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:32 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:32 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:32 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:32 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:32 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"Supervisor","c":"IT","mail":"diego.pedone@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'7PJcGQWjCyD9lBheYwJ0qd6DPVHDMIGvLkB3jXuZokEoT1yhqJRynrlyJaHgzwluV7Eab1PhxioHQESX0XSMJBR7lYxzcmmKNvW6ib3g3HpdoH077BS0E_Q8s2FvYS7amJ-vJ4AlL8zCL3PXInkgirDg6N23aX4nAZk9LzJ3G43Z4cJBJ6B8cdtpkQ1ZYfDwPQW1T8Eeb2CzqE4w2WJMraKXYyHV7SL1xj6oQNXATTvx69zchIxn9M9JhLDYwxXDWmO-GbD0Fufcz1K_HbGQZYaC2XTK8baur4iFGPE5I9F-_MTLQ7uUFlfx46fUhG3Z','salt':'a0e4b8719cea6e92ccac071850ae6a7cc75f47c5c7672359b99bb8b87431b412','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'hsFhNBN_c-Z4Bf4rnCIn2iS1hQJiIr_55v9SkfFZLfw','y':'E1CvaQwlk3DCSpl5Gsu0NItYsAno_D9Rpow7lJtUBbE'}}","sn":"Pedone","cn":"Diego_Pedone","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:32 INFO  GenerateTokenResource:132 - SERVICE Video not allow for diego.pedone@finconsgroup.com
+2017-12-13 13:24:36 DEBUG LogoutResource:22 - Called the logout method...{"username":"diego.pedone@finconsgroup.com"}
+2017-12-13 13:24:36 INFO  LogoutResource:36 - Try to perform logout for the user: diego.pedone@finconsgroup.com
+2017-12-13 13:24:36 DEBUG H2DatabaseEmbedded:65 - Statement: prep16: delete from Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:36 DEBUG H2DatabaseEmbedded:68 - runStatement: prep16: delete from Users where username=? {1: 'diego.pedone@finconsgroup.com'}
+2017-12-13 13:24:36 INFO  LogoutResource:59 - Logout completed for the user diego.pedone@finconsgroup.com with the following response: {"code":200,"message":"Logout succesful"}
+2017-12-13 13:24:39 INFO  UserDataResourceImpl:72 - Called the getUserData method with following parameters: leonardo.straniero@finconsgroup.com
+2017-12-13 13:24:39 INFO  UserDataResourceImpl:88 - Calling Chek User on DB and LDAP...
+2017-12-13 13:24:39 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:24:39 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:39 DEBUG UserDataResourceImpl:115 - Update the old user information...
+2017-12-13 13:24:39 DEBUG H2DatabaseEmbedded:85 - doQuery: prep17: SELECT count(*) as numUtenti FROM  Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:24:39 DEBUG UserDataResourceImpl:121 - Retrieve the public key from user certificate...
+2017-12-13 13:24:39 DEBUG UserDataResourceImpl:128 - Public key generate successful...
+2017-12-13 13:24:39 DEBUG UserDataResourceImpl:131 - Effimeral key generation...
+2017-12-13 13:24:39 DEBUG UserDataResourceImpl:138 - Effimeral Key generate successful...
+2017-12-13 13:24:39 DEBUG UserDataResourceImpl:141 - UserSecret generation...
+2017-12-13 13:24:39 DEBUG UserDataResourceImpl:147 - UserSecret generate successful...
+2017-12-13 13:24:39 DEBUG H2DatabaseEmbedded:85 - doQuery: prep18: SELECT count(*) as numUtenti FROM  Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:24:39 DEBUG H2DatabaseEmbedded:65 - Statement: prep19: insert into Users values ( ?, ?, ?, ? ,?) {1: 'leonardo.straniero@finconsgroup.com', 2: '1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg', 3: TIMESTAMP '2017-12-13 16:24:39.0', 4: 92732295, 5: TIMESTAMP '2017-12-13 13:24:39.0'}
+2017-12-13 13:24:39 DEBUG H2DatabaseEmbedded:68 - runStatement: prep19: insert into Users values ( ?, ?, ?, ? ,?) {1: 'leonardo.straniero@finconsgroup.com', 2: '1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg', 3: TIMESTAMP '2017-12-13 16:24:39.0', 4: 92732295, 5: TIMESTAMP '2017-12-13 13:24:39.0'}
+2017-12-13 13:24:39 INFO  H2DatabaseOperation:86 - New User leonardo.straniero@finconsgroup.com Inserted
+2017-12-13 13:24:39 INFO  UserDataResourceImpl:154 - UserSecret and UserData persisted into H2 DB...
+2017-12-13 13:24:39 INFO  CryptUtil:92 - HMAC generation successful completed...
+2017-12-13 13:24:39 DEBUG UserDataResourceImpl:163 - Json Response successful created...
+2017-12-13 13:24:39 INFO  UserDataResourceImpl:211 - getUserSecret service successful completed. The serivce return code 200
+2017-12-13 13:24:44 DEBUG LoginResourceJson:78 - Check username in H2 DB: leonardo.straniero@finconsgroup.com
+2017-12-13 13:24:44 DEBUG H2DatabaseEmbedded:85 - doQuery: prep20: SELECT count(*) as numUtenti FROM  Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:24:44 DEBUG LoginResourceJson:91 - Retrieve the username from H2 DB: leonardo.straniero@finconsgroup.com
+2017-12-13 13:24:44 DEBUG H2DatabaseEmbedded:85 - doQuery: prep21: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:24:44 DEBUG LoginResourceJson:112 - internal Sign Verified
+2017-12-13 13:24:44 DEBUG LoginResourceJson:122 - external Sign Verified
+2017-12-13 13:24:44 INFO  LoginResourceJson:134 - Token signatures comparison sucessful completed. The service return status 200 and message "Login sucessful completed"
+2017-12-13 13:24:44 INFO  CryptUtil:92 - HMAC generation successful completed...
+2017-12-13 13:24:44 INFO  LdapManager:69 - Called the addEntry() method: {"privateKey":"QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu","salt":"76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4","publicKey":{"ext":true,"kty":"EC","crv":"P-256","key_ops":[],"x":"Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g","y":"T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI"}}
+2017-12-13 13:24:44 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:45 INFO  LdapManager:89 - Modify Entity succesfull OK.
+2017-12-13 13:24:49 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:49 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:49 DEBUG H2DatabaseEmbedded:85 - doQuery: prep22: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:24:49 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:49 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:49 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:49 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:24:49 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:49 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"IT","mail":"leonardo.straniero@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu','salt':'76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g','y':'T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI'}}","sn":"Straniero","cn":"Leonardo_Straniero","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:49 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:24:49 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:49 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:24:49 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:49 INFO  AESencrp:23 - Called the encrypt method...1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg
+2017-12-13 13:24:49 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:24:49 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:49 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:49 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:54 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:54 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:54 DEBUG H2DatabaseEmbedded:85 - doQuery: prep23: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:24:54 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:54 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:54 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:54 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:24:54 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:54 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"IT","mail":"leonardo.straniero@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu','salt':'76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g','y':'T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI'}}","sn":"Straniero","cn":"Leonardo_Straniero","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:54 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:24:54 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:54 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:24:54 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:54 INFO  AESencrp:23 - Called the encrypt method...1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg
+2017-12-13 13:24:54 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:24:54 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:55 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:55 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:57 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:57 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:57 DEBUG H2DatabaseEmbedded:85 - doQuery: prep24: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:24:57 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:57 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:57 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:57 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:24:57 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:57 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"IT","mail":"leonardo.straniero@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu','salt':'76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g','y':'T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI'}}","sn":"Straniero","cn":"Leonardo_Straniero","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:57 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:24:57 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:57 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:24:57 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:57 INFO  AESencrp:23 - Called the encrypt method...1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg
+2017-12-13 13:24:57 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:24:57 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:57 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:57 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:24:59 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:24:59 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:24:59 DEBUG H2DatabaseEmbedded:85 - doQuery: prep25: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:24:59 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:24:59 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:24:59 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:24:59 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:24:59 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:24:59 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"IT","mail":"leonardo.straniero@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu','salt':'76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g','y':'T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI'}}","sn":"Straniero","cn":"Leonardo_Straniero","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:24:59 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:24:59 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:24:59 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:24:59 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:24:59 INFO  AESencrp:23 - Called the encrypt method...1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg
+2017-12-13 13:24:59 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:24:59 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:24:59 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:24:59 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:25:00 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:25:00 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:25:00 DEBUG H2DatabaseEmbedded:85 - doQuery: prep26: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:25:00 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:25:00 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:25:00 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:25:00 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:25:00 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:25:00 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"IT","mail":"leonardo.straniero@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu','salt':'76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g','y':'T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI'}}","sn":"Straniero","cn":"Leonardo_Straniero","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:25:00 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:25:00 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:25:00 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:25:00 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:25:00 INFO  AESencrp:23 - Called the encrypt method...1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg
+2017-12-13 13:25:00 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:25:00 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:25:00 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:25:00 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:25:02 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:25:02 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:25:02 DEBUG H2DatabaseEmbedded:85 - doQuery: prep27: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:25:02 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:25:02 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:25:02 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:25:02 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:25:02 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:25:02 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"IT","mail":"leonardo.straniero@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu','salt':'76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g','y':'T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI'}}","sn":"Straniero","cn":"Leonardo_Straniero","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:25:02 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:25:02 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:25:02 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:25:02 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:25:02 INFO  AESencrp:23 - Called the encrypt method...1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg
+2017-12-13 13:25:02 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:25:02 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:25:02 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:25:02 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:25:05 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:25:05 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:25:05 DEBUG H2DatabaseEmbedded:85 - doQuery: prep28: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:25:05 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:25:05 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:25:05 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:25:05 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:25:05 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:25:05 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"IT","mail":"leonardo.straniero@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu','salt':'76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g','y':'T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI'}}","sn":"Straniero","cn":"Leonardo_Straniero","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:25:05 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:25:05 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:25:05 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:25:05 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:25:05 INFO  AESencrp:23 - Called the encrypt method...1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg
+2017-12-13 13:25:05 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:25:05 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:25:05 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:25:05 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:26:13 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:26:13 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:26:13 DEBUG H2DatabaseEmbedded:85 - doQuery: prep29: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:26:13 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:26:13 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:26:13 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:26:13 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:26:13 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:26:13 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"IT","mail":"leonardo.straniero@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu','salt':'76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g','y':'T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI'}}","sn":"Straniero","cn":"Leonardo_Straniero","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:26:13 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:26:13 DEBUG GenerateTokenResource:164 - Get Shered Key forKeyGeneratorService
+2017-12-13 13:26:13 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:26:13 INFO  AESencrp:23 - Called the encrypt method...1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg
+2017-12-13 13:26:13 INFO  AESencrp:23 - Called the encrypt method...TGFTdXBlckNoMWF2ZURlbGxlQ2gxYXYxVXNhdGU
+2017-12-13 13:26:13 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:26:13 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:26:13 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:26:16 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:26:16 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:26:16 DEBUG H2DatabaseEmbedded:85 - doQuery: prep30: SELECT * FROM Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:26:16 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:26:16 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:26:16 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:26:16 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:26:16 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:26:16 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"IT","mail":"leonardo.straniero@finconsgroup.com","ou":"IBD_&_Innovation_BU","certificate":"{'privateKey':'QHFFx1h0vc-QYUTf4-oGb29PE0TcFzRcqNJFi5fNMUUinf7fejZuDJinmWdyLQMQ4ztwyA4_87ZArRVzBP4PTq-6qED53U5QgKTPK4yrq6YN5h5WA_Q9eLOELNTDzfcvpgbMPSlANUNUQp5M0Z5aobNjInf_sHmeRSQT1WflrYGa2EYz6c12xuGFC32TtytRiHlUtjz5flkwLXA3njSpPyzYpj3KCqfktOLZeNDJVrPStawbYrODr71lxpNof9BSrtzmgMjjmBEKhRVQ3KdkxQjJhNXGrIxTinrCABy8EJHDr0Yy0JpQt-X8bCRvp6Hu','salt':'76e60a5f5a88eca78077e5ae1ccf9cfe72e6e9c94f85f9b4f18232127a0630e4','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'Vor5x_wfavQl3EK_APj73rqItda2hrH_xgEQWIOtk6g','y':'T4TYV-ny_m7pQeRzOlP3ME0H56Hd92Avt-gAgGTJ3RI'}}","sn":"Straniero","cn":"Leonardo_Straniero","message":"OK","o":"FINCONS_SpA"}
+2017-12-13 13:26:16 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:26:16 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:26:16 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:26:16 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:26:16 INFO  AESencrp:23 - Called the encrypt method...1fy6xX5IBIhCgt5Ys33962W0BiCFSHnrpMkLQAmPyVg
+2017-12-13 13:26:16 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:26:16 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:26:16 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:26:16 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:26:25 DEBUG LogoutResource:22 - Called the logout method...{"username":"leonardo.straniero@finconsgroup.com"}
+2017-12-13 13:26:25 INFO  LogoutResource:36 - Try to perform logout for the user: leonardo.straniero@finconsgroup.com
+2017-12-13 13:26:25 DEBUG H2DatabaseEmbedded:65 - Statement: prep31: delete from Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:26:25 DEBUG H2DatabaseEmbedded:68 - runStatement: prep31: delete from Users where username=? {1: 'leonardo.straniero@finconsgroup.com'}
+2017-12-13 13:26:25 INFO  LogoutResource:59 - Logout completed for the user leonardo.straniero@finconsgroup.com with the following response: {"code":200,"message":"Logout succesful"}
+2017-12-13 13:26:29 INFO  UserDataResourceImpl:72 - Called the getUserData method with following parameters: tester.user@ftigroup.net
+2017-12-13 13:26:29 INFO  UserDataResourceImpl:88 - Calling Chek User on DB and LDAP...
+2017-12-13 13:26:29 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:26:29 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:26:29 INFO  UserDataResourceImpl:107 - User Unauthorized. The service return a code 401 and a message "User Unauthorized"
+2017-12-13 13:26:46 INFO  UserDataResourceImpl:72 - Called the getUserData method with following parameters: tester.user@ftigroup.net
+2017-12-13 13:26:46 INFO  UserDataResourceImpl:88 - Calling Chek User on DB and LDAP...
+2017-12-13 13:26:46 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:26:46 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:26:46 INFO  UserDataResourceImpl:107 - User Unauthorized. The service return a code 401 and a message "User Unauthorized"
+2017-12-13 13:26:49 INFO  UserDataResourceImpl:72 - Called the getUserData method with following parameters: tester.user@ftigroup.net
+2017-12-13 13:26:49 INFO  UserDataResourceImpl:88 - Calling Chek User on DB and LDAP...
+2017-12-13 13:26:49 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:26:49 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:26:49 INFO  UserDataResourceImpl:107 - User Unauthorized. The service return a code 401 and a message "User Unauthorized"
+2017-12-13 13:26:54 INFO  CheckRegistrationResource:34 - Called the getUserData method with following parameters: tester.user@ftigroup.net
+2017-12-13 13:26:54 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:26:54 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:26:54 DEBUG CheckRegistrationResource:76 - The service returning code 200 and message "OK"
+2017-12-13 13:26:57 INFO  RegistrationResource:31 - The user tester.user@ftigroup.net try to attempt the new account creation...
+2017-12-13 13:26:57 INFO  RegistrationResource:48 - Valid registration. The service try to save the certificate on the LDAP DS...
+2017-12-13 13:26:57 INFO  LdapManager:69 - Called the addEntry() method: {"privateKey":"_g9bywVQ0nPgWj6ug8xJbJNrYNgSKEgUJncGKv9UfYqmlWBulMiuvWrdO8LJZgHQeXhZUMnGHS5WNEefME4F8Q4lTk8V4MTxCzxiv_xA4gmp00wZj-zIdxs-Vr-X9SK2FNJBPhCpG0SF4Ppa3jT5PNk2W_IUEVoDXbxuSuiffbd0g-C7tGNZisyhNV44bstRkbqG5HUXfSeEg5FZxNZJs6wQLLg9U4Y7dvVHAnGgE4oFZ26LQR4yvfvRWMVtrSSRLlZG6f4YOrrlE5_ql_UdW9Z0eUj-m5v9XUSq5PPP4H_t6y6NWcK5jXS_b9VIoiqQ","salt":"5e613cd50f11e220e0a63b6c85d01dace458b803883398daec0d6d06bc68838b","publicKey":{"ext":true,"kty":"EC","crv":"P-256","key_ops":[],"x":"YmtpchihRBB-mSVBrYG7v08o_d8iPNCPnGu9H5-XJUs","y":"820c4mxBqDVWMfXBGQLt4Ij6RVLxEYFhzuWJo7BB7jM"}}
+2017-12-13 13:26:57 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:26:57 INFO  LdapManager:89 - Modify Entity succesfull OK.
+2017-12-13 13:26:57 INFO  RegistrationResource:73 - Registration process completed with the code 200 and the message OK
+2017-12-13 13:27:03 INFO  UserDataResourceImpl:72 - Called the getUserData method with following parameters: tester.user@ftigroup.net
+2017-12-13 13:27:03 INFO  UserDataResourceImpl:88 - Calling Chek User on DB and LDAP...
+2017-12-13 13:27:03 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:03 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:03 DEBUG UserDataResourceImpl:115 - Update the old user information...
+2017-12-13 13:27:03 DEBUG H2DatabaseEmbedded:85 - doQuery: prep32: SELECT count(*) as numUtenti FROM  Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:03 DEBUG UserDataResourceImpl:121 - Retrieve the public key from user certificate...
+2017-12-13 13:27:03 DEBUG UserDataResourceImpl:128 - Public key generate successful...
+2017-12-13 13:27:03 DEBUG UserDataResourceImpl:131 - Effimeral key generation...
+2017-12-13 13:27:03 DEBUG UserDataResourceImpl:138 - Effimeral Key generate successful...
+2017-12-13 13:27:03 DEBUG UserDataResourceImpl:141 - UserSecret generation...
+2017-12-13 13:27:03 DEBUG UserDataResourceImpl:147 - UserSecret generate successful...
+2017-12-13 13:27:03 DEBUG H2DatabaseEmbedded:85 - doQuery: prep33: SELECT count(*) as numUtenti FROM  Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:03 DEBUG H2DatabaseEmbedded:65 - Statement: prep34: insert into Users values ( ?, ?, ?, ? ,?) {1: 'tester.user@ftigroup.net', 2: 'YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE', 3: TIMESTAMP '2017-12-13 16:27:03.0', 4: 208842985, 5: TIMESTAMP '2017-12-13 13:27:03.0'}
+2017-12-13 13:27:03 DEBUG H2DatabaseEmbedded:68 - runStatement: prep34: insert into Users values ( ?, ?, ?, ? ,?) {1: 'tester.user@ftigroup.net', 2: 'YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE', 3: TIMESTAMP '2017-12-13 16:27:03.0', 4: 208842985, 5: TIMESTAMP '2017-12-13 13:27:03.0'}
+2017-12-13 13:27:03 INFO  H2DatabaseOperation:86 - New User tester.user@ftigroup.net Inserted
+2017-12-13 13:27:03 INFO  UserDataResourceImpl:154 - UserSecret and UserData persisted into H2 DB...
+2017-12-13 13:27:03 INFO  CryptUtil:92 - HMAC generation successful completed...
+2017-12-13 13:27:03 DEBUG UserDataResourceImpl:163 - Json Response successful created...
+2017-12-13 13:27:03 INFO  UserDataResourceImpl:211 - getUserSecret service successful completed. The serivce return code 200
+2017-12-13 13:27:06 DEBUG LoginResourceJson:78 - Check username in H2 DB: tester.user@ftigroup.net
+2017-12-13 13:27:06 DEBUG H2DatabaseEmbedded:85 - doQuery: prep35: SELECT count(*) as numUtenti FROM  Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:06 DEBUG LoginResourceJson:91 - Retrieve the username from H2 DB: tester.user@ftigroup.net
+2017-12-13 13:27:06 DEBUG H2DatabaseEmbedded:85 - doQuery: prep36: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:06 DEBUG LoginResourceJson:112 - internal Sign Verified
+2017-12-13 13:27:06 DEBUG LoginResourceJson:122 - external Sign Verified
+2017-12-13 13:27:06 INFO  LoginResourceJson:134 - Token signatures comparison sucessful completed. The service return status 200 and message "Login sucessful completed"
+2017-12-13 13:27:06 INFO  CryptUtil:92 - HMAC generation successful completed...
+2017-12-13 13:27:06 INFO  LdapManager:69 - Called the addEntry() method: {"privateKey":"iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0","salt":"5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717","publicKey":{"ext":true,"kty":"EC","crv":"P-256","key_ops":[],"x":"qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4","y":"tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU"}}
+2017-12-13 13:27:06 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:06 INFO  LdapManager:89 - Modify Entity succesfull OK.
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:09 DEBUG H2DatabaseEmbedded:85 - doQuery: prep37: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:09 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:09 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:09 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:09 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:09 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:09 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:09 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:09 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:09 DEBUG DefPolicyTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:09 DEBUG DefPolicyTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:09 DEBUG H2DatabaseEmbedded:85 - doQuery: prep38: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:09 INFO  DefPolicyTokenResource:73 - User Validity is ok
+2017-12-13 13:27:09 DEBUG DefPolicyTokenResource:95 - Check User Secret...
+2017-12-13 13:27:09 DEBUG DefPolicyTokenResource:110 - ### End Token Validation ###
+2017-12-13 13:27:09 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:09 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:09 DEBUG DefPolicyTokenResource:125 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:09 DEBUG DefPolicyTokenResource:131 - ### End Token Authorization ###
+2017-12-13 13:27:09 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:09 DEBUG DefPolicyTokenResource:139 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:27:09 DEBUG DefPolicyTokenResource:144 - ### Start Generate Token ###
+2017-12-13 13:27:09 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:09 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:27:09 INFO  DefPolicyTokenResource:174 - Claims generation succesfull completed!
+2017-12-13 13:27:09 INFO  DefPolicyTokenResource:186 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:09 DEBUG DefPolicyTokenResource:188 - ### End Generate Token ###
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:09 DEBUG H2DatabaseEmbedded:85 - doQuery: prep39: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:09 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:09 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:09 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:09 INFO  GenerateTokenResource:132 - SERVICE Policy not allow for tester.user@ftigroup.net
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:09 DEBUG H2DatabaseEmbedded:85 - doQuery: prep40: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:09 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:09 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:09 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:09 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:09 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:09 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:09 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:09 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:09 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:10 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:10 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:10 DEBUG H2DatabaseEmbedded:85 - doQuery: prep41: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:10 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:10 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:10 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:10 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:10 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:10 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:10 INFO  GenerateTokenResource:132 - SERVICE Policy not allow for tester.user@ftigroup.net
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:11 DEBUG H2DatabaseEmbedded:85 - doQuery: prep42: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:11 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:11 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:11 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:11 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:11 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:11 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:11 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:11 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:11 DEBUG DefPolicyTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:11 DEBUG DefPolicyTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:11 DEBUG H2DatabaseEmbedded:85 - doQuery: prep43: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:11 INFO  DefPolicyTokenResource:73 - User Validity is ok
+2017-12-13 13:27:11 DEBUG DefPolicyTokenResource:95 - Check User Secret...
+2017-12-13 13:27:11 DEBUG DefPolicyTokenResource:110 - ### End Token Validation ###
+2017-12-13 13:27:11 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:11 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:11 DEBUG DefPolicyTokenResource:125 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:11 DEBUG DefPolicyTokenResource:131 - ### End Token Authorization ###
+2017-12-13 13:27:11 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:11 DEBUG DefPolicyTokenResource:139 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:27:11 DEBUG DefPolicyTokenResource:144 - ### Start Generate Token ###
+2017-12-13 13:27:11 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:11 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:27:11 INFO  DefPolicyTokenResource:174 - Claims generation succesfull completed!
+2017-12-13 13:27:11 INFO  DefPolicyTokenResource:186 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:11 DEBUG DefPolicyTokenResource:188 - ### End Generate Token ###
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:11 DEBUG H2DatabaseEmbedded:85 - doQuery: prep44: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:11 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:11 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:11 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:11 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:11 INFO  GenerateTokenResource:132 - SERVICE Policy not allow for tester.user@ftigroup.net
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:12 DEBUG H2DatabaseEmbedded:85 - doQuery: prep45: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:12 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:12 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:12 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:12 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:12 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:12 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:12 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:12 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:12 DEBUG H2DatabaseEmbedded:85 - doQuery: prep46: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:12 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:12 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:12 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:12 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:12 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:12 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:12 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:12 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:12 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:14 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:14 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:14 DEBUG H2DatabaseEmbedded:85 - doQuery: prep47: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:14 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:14 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:14 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:14 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:14 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:14 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:14 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:14 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:14 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:14 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:14 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:14 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:14 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:14 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:14 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:19 DEBUG H2DatabaseEmbedded:85 - doQuery: prep48: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:19 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:19 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:19 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:19 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:19 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:19 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:19 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:19 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:19 DEBUG DefPolicyTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:19 DEBUG DefPolicyTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:19 DEBUG H2DatabaseEmbedded:85 - doQuery: prep49: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:19 INFO  DefPolicyTokenResource:73 - User Validity is ok
+2017-12-13 13:27:19 DEBUG DefPolicyTokenResource:95 - Check User Secret...
+2017-12-13 13:27:19 DEBUG DefPolicyTokenResource:110 - ### End Token Validation ###
+2017-12-13 13:27:19 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:19 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:19 DEBUG DefPolicyTokenResource:125 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:19 DEBUG DefPolicyTokenResource:131 - ### End Token Authorization ###
+2017-12-13 13:27:19 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:19 DEBUG DefPolicyTokenResource:139 - Get Shered Key forPSY_PolicySService
+2017-12-13 13:27:19 DEBUG DefPolicyTokenResource:144 - ### Start Generate Token ###
+2017-12-13 13:27:19 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:19 INFO  AESencrp:23 - Called the encrypt method...TGFTaWN1cmV6emFOb24zTWFpVHJvcHBhUXVpbmRp
+2017-12-13 13:27:19 INFO  DefPolicyTokenResource:174 - Claims generation succesfull completed!
+2017-12-13 13:27:19 INFO  DefPolicyTokenResource:186 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:19 DEBUG DefPolicyTokenResource:188 - ### End Generate Token ###
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:19 DEBUG H2DatabaseEmbedded:85 - doQuery: prep50: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:19 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:19 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:19 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:19 INFO  GenerateTokenResource:132 - SERVICE Policy not allow for tester.user@ftigroup.net
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:19 DEBUG H2DatabaseEmbedded:85 - doQuery: prep51: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:19 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:19 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:19 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:19 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:19 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:19 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:19 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:19 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:19 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:22 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:22 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:22 DEBUG H2DatabaseEmbedded:85 - doQuery: prep52: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:22 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:22 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:22 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:22 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:22 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:22 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:22 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:22 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:22 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:22 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:22 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:22 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:22 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:22 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:22 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:23 DEBUG GenerateTokenResource:47 - ### Start generateToken ###
+2017-12-13 13:27:23 DEBUG GenerateTokenResource:61 - ### Start Token Validation ###
+2017-12-13 13:27:23 DEBUG H2DatabaseEmbedded:85 - doQuery: prep53: SELECT * FROM Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:23 INFO  GenerateTokenResource:72 - User Validity is ok
+2017-12-13 13:27:23 DEBUG GenerateTokenResource:92 - Check User Secret...
+2017-12-13 13:27:23 DEBUG GenerateTokenResource:108 - ### End Token Validation ###
+2017-12-13 13:27:23 INFO  LdapManager:125 - Called the find() searchUser: {"mail":"tester.user@ftigroup.net"}
+2017-12-13 13:27:23 INFO  LdapManager:104 - Called the find() method
+2017-12-13 13:27:23 DEBUG GenerateTokenResource:124 - ### Start Token Authorization ### {"code":200,"role":"CustomerHeadOfSecurity","c":"DE","mail":"tester.user@ftigroup.net","ou":"Wildau","certificate":"{'privateKey':'iyB-boqBFFZNH39-htQYRL1tOOjsBatDet23hDUvSPX2trsdu1kSu0z7fdnRhEvD4uYqkykuj_HJ6H8gZJwoBC7IpXmKMlw3UvVFWZsn_W_l286q3P4yePyyzEOprO30VxC-dAagcEAVm8By6ntLvI6XfZYYpwSEMGcoZ6m1gxhVE8RaFkuyCihxfzAZvYr7fHGcaMWnyldRUtz8tW2EnYlpIqf50o8g9J6BsCLBhQGo1Wg_ph4Vc58bRCMPqMxpuEY77YialMG53o7qzGkvF7tTEorwzrcsf61zfzfD2gupKvzvzRvAvKSFYWwz4fH0','salt':'5323e94c26d8768cd2f007532948f0cc7c13bc8ac7e92ef327dd70ec92aa1717','publicKey':{'ext':true,'kty':'EC','crv':'P-256','key_ops':[],'x':'qyiSZyGxnYl-iOCdqd4uyKyJ_4fWtpRzRM8H0-XBAk4','y':'tReRg5ehMOBPy9-N0kPWd7JSG_kC4flveDFblfklagU'}}","sn":"User","cn":"Tester_User","message":"OK","o":"FTI"}
+2017-12-13 13:27:23 INFO  GenerateTokenResource:144 - Restrict to Customer
+2017-12-13 13:27:23 DEBUG GenerateTokenResource:160 - ### End Token Authorization ###
+2017-12-13 13:27:23 DEBUG GenerateTokenResource:164 - Get Shered Key forPSY_VideoSService
+2017-12-13 13:27:23 DEBUG GenerateTokenResource:169 - ### Start Generate Token ###
+2017-12-13 13:27:23 INFO  AESencrp:23 - Called the encrypt method...YjGOcXm6bpFXC69qTVR5NGHGLW_FahzFiyZM-YAG8uE
+2017-12-13 13:27:23 INFO  AESencrp:23 - Called the encrypt method...Q2lhb01hbW1hNnVhcmRhQ29tZU1pRGl2ZXJ0bw
+2017-12-13 13:27:23 INFO  GenerateTokenResource:188 - Claims generation succesfull completed!
+2017-12-13 13:27:23 INFO  GenerateTokenResource:200 - JWT generation successful completed. The service return status 200 and message "Authorizated Token Generated"
+2017-12-13 13:27:23 DEBUG GenerateTokenResource:201 - ### End Generate Token ###
+2017-12-13 13:27:27 DEBUG LogoutResource:22 - Called the logout method...{"username":"tester.user@ftigroup.net"}
+2017-12-13 13:27:27 INFO  LogoutResource:36 - Try to perform logout for the user: tester.user@ftigroup.net
+2017-12-13 13:27:27 DEBUG H2DatabaseEmbedded:65 - Statement: prep54: delete from Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:27 DEBUG H2DatabaseEmbedded:68 - runStatement: prep54: delete from Users where username=? {1: 'tester.user@ftigroup.net'}
+2017-12-13 13:27:27 INFO  LogoutResource:59 - Logout completed for the user tester.user@ftigroup.net with the following response: {"code":200,"message":"Logout succesful"}

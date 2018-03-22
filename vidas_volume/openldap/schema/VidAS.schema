@@ -1,0 +1,134 @@
+## PSYMBIOSYS FTI Video Analysis Service schema 
+## 
+## Version: 2
+##
+## Date: June 2017
+# 
+## Copyright 2016-2017 FINCONS SpA
+## All rights reserved.
+##
+## FINCONS SpA URL: 
+##    http://www.finconsgroup.com/
+##
+## PSYMBIOSYS is an H2020 FOF5 project in which FINCONS SpA is developing a Video Analysis Service for the FTI partner.
+##
+## This schema is developed under the FINCONS OID:
+##    1.3.6.1.4.1.47519
+##
+## To be more specific the PSYMBIOSYS project makes use of the OIDs' tree:
+##    1.3.6.1.4.1.47519.10
+##
+## This schema cannot be used without FINCONS specific permission, as no extensions are allowed under the FINCONS OID tree
+## specified above.
+#
+# Depends upon:
+#   core.schema
+#   inetorgperson.schema
+#
+#
+# Syntaxes are under:        1.3.6.1.4.1.47519.10.0 (no new syntaxes are defined)
+# Attribute types are under: 1.3.6.1.4.1.47519.10.1
+# Object classes are under:  1.3.6.1.4.1.47519.10.2
+
+##
+## Attribute Type Definitions
+##
+
+#
+# This attribute is used to store a certificate containing subject's public key and its encrypted private key in a FINCONS defined format
+# (i.e., (the encrypted private key is in Base64URL, while the public key in in Json Web Key format).
+attributetype ( 1.3.6.1.4.1.47519.10.1.1 
+	NAME 'FINCSecurityCertificate'
+	DESC 'This attribute stores the subject public/private keys in a FINCONS defined Base64 format'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+	SINGLE-VALUE )
+
+#
+# This attribute is used to specify the role the person has within the Video Analysis Service and must be one of the following possible values:
+#    - CustomerSpecialist: this role can view or create videos, as well as read access policy for the company the person belongs to
+#    - CustomerTechnical: this role can only create videos and read access policy for the company the person belongs to
+#    - CustomerHeadOfSecurityOfficer: this role can view, create or remove videos, as well as can create and read 
+#                                     access policy for the company the person belongs to
+#    - Administrator: this role cannot do any operation on videos or access policies. This role is just for reporting users having some admin role
+#    - Supervisor: this role can check the videos status for any company, and can access videos if the video's access policy grants access;
+#                  additonally this role can view, read or create policies for any compnay
+#
+# Actually there is a further role "AnalysisService" that cannot be assigned to a person and can only be played by a ViDASAgent
+attributetype ( 1.3.6.1.4.1.47519.10.1.2 
+	NAME 'VidASRole'
+	DESC 'This attribute must be used to specify the subject role (selected among: CustomerSpecialist, CustomerTechnical, CustomerHeadOfSecurityOfficer, Administrator, Supervisor)'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+	SINGLE-VALUE )
+
+#
+# This attribute unambiguously identifies a Video Analysis Service process within the system 
+# (i.e., a process performing some specific processing on sotred videos).
+# ViDASAgent's entities can view video's content, while they don't have any access to companies' policies.
+#
+# N.B.: from an operative point of view a ViDASAgent implicitly has the "AnalysisService" role.
+#
+attributetype ( 1.3.6.1.4.1.47519.10.1.3 
+	NAME 'ViDASAgentID'
+	DESC 'This attribute unambiguously identifies a Video Analysis Service process within the system'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+	SINGLE-VALUE )
+	
+#
+# This attribute specifies the DN of a the reference person for this specific ViDAS Agent
+# e.g.: cn=John Smith,ou=IBD,o=FINCONS,countryName=IT,dc=example,dc=com
+#
+attributetype ( 1.3.6.1.4.1.47519.10.1.4 
+	NAME 'ViDASAgentReferencePerson'
+	DESC 'This attribute specifies the DN of a the reference person for this specific ViDAS Agent'
+	EQUALITY distinguishedNameMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 )
+	
+#
+# This attribute specifies the URL of the default policy associated to a VidASUser
+# e.g.: http://PolicyStorage.example.org/policypath/policyID
+#
+attributetype ( 1.3.6.1.4.1.47519.10.1.5 
+	NAME 'ViDASUserDefaultPolicy'
+	DESC 'This attribute specifies the URL of the default policy associated to a VidAS User'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+	SINGLE-VALUE )
+
+##
+## Object Class Definitions
+##
+
+# VidASUser
+# The VidASUser represents people who are authorized to access the system.  
+# It is a structural class and is derived from the inetOrgPerson which is defined in RFC2798.
+objectclass	( 1.3.6.1.4.1.47519.10.2.1
+    NAME 'VidASUser'
+	DESC 'FTI Video Analysis Service user'
+    SUP inetOrgPerson
+    STRUCTURAL
+	MUST (
+			FINCSecurityCertificate $ VidASRole $ Mail )
+	MAY (
+		ViDASUserDefaultPolicy )
+	)
+
+# VidASAgent
+# The VidASAgent represents a process doing some specific analysis processing on videos.  
+# It is a structural class.
+objectclass	( 1.3.6.1.4.1.47519.10.2.2
+    NAME 'VidASAgent'
+	DESC 'FTI Video Analysis Service process'
+    SUP top
+    STRUCTURAL
+	MUST (
+			ViDASAgentID $ FINCSecurityCertificate $ Mail )
+	MAY (
+		CommonName $ ViDASAgentReferencePerson )
+	)
