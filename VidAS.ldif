@@ -1,0 +1,308 @@
+version: 1
+
+dn: dc=FTIVidAS
+objectClass: domain
+objectClass: top
+dc: FTIVidAS
+
+dn: c=DE,dc=FTIVidAS
+objectClass: country
+objectClass: top
+c: DE
+
+dn: c=IT,dc=FTIVidAS
+objectClass: country
+objectClass: top
+c: IT
+
+dn: o=FTI,c=DE,dc=FTIVidAS
+objectClass: organization
+objectClass: top
+o: FTI
+
+dn: ou=Wildau,o=FTI,c=DE,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: Wildau
+
+dn: cn=Anne Fischer,ou=Wildau,o=FTI,c=DE,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Anne Fischer
+FINCSecurityCertificate: null
+mail: anne.fischer@ftigroup.net
+sn: Fischer
+VidASRole: Supervisor
+
+dn: o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: organization
+objectClass: top
+o: Lufthansa
+
+dn: ou=Enterprise Security Unit,o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: Enterprise Security Unit
+
+dn: cn=John Smith,ou=Enterprise Security Unit,o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: John Smith
+FINCSecurityCertificate: null
+mail: john.smith@lufthansa.com
+sn: Smith
+VidASRole: CustomerHeadOfSecurityOfficer
+
+dn: cn=Karl Zimmermann,ou=Enterprise Security Unit,o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Karl Zimmermann
+FINCSecurityCertificate: null
+mail: karl.zimmermann@lufthansa.com
+sn: Zimmerman
+VidASRole: CustomerSpecialist
+
+dn: ou=Munich Airport,o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: Munich Airport
+
+dn: cn=Ursula Kessler,ou=Munich Airport,o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Ursula Kessler
+FINCSecurityCertificate: null
+mail: ursula.kessler@lufthansa.com
+sn: Kessler
+VidASRole: CustomerTechnical
+
+dn: cn=Ludwig Wagner,ou=Munich Airport,o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Ludwig Wagner
+FINCSecurityCertificate: null
+mail: ludwig.wagner@lufthansa.com
+sn: Wagner
+VidASRole: CustomerTechnical
+
+dn: ou=Berlin Airport,o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: Berlin Airport
+
+dn: cn=Karl Ulrich,ou=Berlin Airport,o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Karl Ulrich
+FINCSecurityCertificate: null
+mail: karl.ulrich@lufthansa.com
+sn: Ulrich
+VidASRole: CustomerTechnical
+
+dn: cn=Andreas Falk,ou=Berlin Airport,o=Lufthansa,c=DE,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Andreas Falk
+FINCSecurityCertificate: null
+mail: andreas.falk@lufthansa.com
+sn: Falk
+VidASRole: CustomerTechnical
+
+dn: o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: organization
+objectClass: top
+o: Alitalia
+
+dn: ou=Ufficio Supervisione & Controllo,o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: Ufficio Supervisione & Controllo
+
+dn: cn=Maria Draghi,ou=Ufficio Supervisione & Controllo,o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Maria Draghi
+FINCSecurityCertificate: null
+mail: maria.draghi@alitalia.com
+sn: Draghi
+VidASRole: CustomerHeadOfSecurityOfficer
+
+dn: cn=Enrico Sapegno,ou=Ufficio Supervisione & Controllo,o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Enrico Sapegno
+FINCSecurityCertificate: null
+mail: enrico.sapegno@alitalia.com
+sn: Sapegno
+VidASRole: CustomerSpecialist
+
+dn: ou=Aeroporto Malpensa,o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: Aeroporto Malpensa
+
+dn: cn=Mario Rossi,ou=Aeroporto Malpensa,o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Mario Rossi
+FINCSecurityCertificate: null
+mail: mario.rossi@alitalia.com
+sn: Rossi
+VidASRole: CustomerTechnical
+
+dn: cn=Pamela Verdi,ou=Aeroporto Malpensa,o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Pamela Verdi
+FINCSecurityCertificate: null
+mail: pamela.verdi@alitalia.com
+sn: Verdi
+VidASRole: CustomerTechnical
+
+dn: ou=Aeroporto Bari Palese,o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: Aeroporto Bari Palese
+
+dn: cn=Maria Lorusso,ou=Aeroporto Bari Palese,o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Maria Lorusso
+FINCSecurityCertificate: null
+mail: maria.lorusso@alitalia.com
+sn: Lorusso
+VidASRole: CustomerTechnical
+
+dn: cn=Giovanna Riccardi,ou=Aeroporto Bari Palese,o=Alitalia,c=IT,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Giovanna Riccardi
+FINCSecurityCertificate: null
+mail: giovanna.riccardi@alitalia.com
+sn: Riccardi
+VidASRole: CustomerTechnical
+
+dn: ou=VidAS Analysis Processes,o=FTI,c=DE,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: VidAS Analysis Processes
+
+dn: ViDASAgentID=LensChecker,ou=VidAS Analysis Processes,o=FTI,c=DE,dc=FTIVidAS
+objectClass: VidASAgent
+objectClass: top
+FINCSecurityCertificate: null
+mail: lenschecker@ftigroup.net
+ViDASAgentID: LensChecker
+ViDASAgentReferencePerson: cn=Benjamin Price,ou=Wildau,o=FTI,c=DE,dc=FTIVidAS
+
+dn: ViDASAgentID=VideoQualityChecker,ou=VidAS Analysis Processes,o=FTI,c=DE,dc=FTIVidAS
+objectClass: VidASAgent
+objectClass: top
+FINCSecurityCertificate: null
+mail: VideoQualityChecker@ftigroup.net
+ViDASAgentID: VideoQualityChecker
+ViDASAgentReferencePerson: cn=Benjamin Price,ou=Wildau,o=FTI,c=DE,dc=FTIVidAS
+
+dn: o=FINCONS SpA,c=IT,dc=FTIVidAS
+objectClass: organization
+objectClass: top
+o: FINCONS SpA
+
+dn: ou=IBD & Innovation BU,o=FINCONS SpA,c=IT,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: IBD & Innovation BU
+
+dn: ou=IBD & Innovation Bari,ou=IBD & Innovation BU,o=FINCONS SpA,c=IT,dc=FTIVidAS
+objectClass: organizationalUnit
+objectClass: top
+ou: IBD & Innovation Bari
+
+dn: cn=John Doe,ou=IBD & Innovation Bari,ou=IBD & Innovation BU,o=FINCONS SpA,c=IT,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: John Doe
+FINCSecurityCertificate: null
+mail: john.doe@example.com
+sn: Doe
+VidASRole: Supervisor
+
+dn: cn=Davide Bruni,ou=IBD & Innovation Bari,ou=IBD & Innovation BU,o=FI
+ NCONS SpA,c=IT,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Davide Bruni
+FINCSecurityCertificate: null
+mail: davide.bruni@example.com
+sn: Bruni
+VidASRole: CustomerHeadOfSecurity
+
+dn: cn=Erik Man,ou=Wildau,o=FTI,c=DE,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Erik Man
+FINCSecurityCertificate: null
+mail: erik.man@ftigroup.net
+sn: Man
+VidASRole: Supervisor
+
+dn: cn=Mister Example,ou=Wildau,o=FTI,c=DE,dc=FTIVidAS
+objectClass: VidASUser
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Mister Example
+FINCSecurityCertificate: null
+mail: mister.example@ftigroup.net
+sn: Example
+VidASRole: Supervisor
+

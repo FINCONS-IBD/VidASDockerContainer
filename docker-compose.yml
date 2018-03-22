@@ -1,0 +1,54 @@
+#######################
+# Docker Compose file #
+#######################
+
+version: '2.0'
+
+services:
+
+    tomcat:
+        image: bitnami/tomcat:8.0 
+        ports:
+            - 8080:8080
+            - 8443:8443
+        container_name: 
+         tomcat.example.com
+        volumes:
+            - ./vidas_volume/tomcat/tomcat_container:/bitnami
+           #- ./vidas_volume/tomcat/certs/vidaskeystore.jks:/opt/ssl/tomcat/vidaskeystore.jks
+           # - ./vidas_volume/tomcat/config/server.xml:/opt/bitnami/tomcat/conf/server.xml
+            - ./vidas_volume/tomcat/logs:/opt/bitnami/tomcat/logs
+            - ./vidas_volume/tomcat/VIDAS:/opt/VIDAS
+           # - ./vidas_volume/tomcat/webapps:/opt/bitnami/tomcat/data
+           # - ./vidas_volume/jce/local_policy.jar:/opt/bitnami/java/lib/security/local_policy.jar
+            - ./vidas_volume/java_security/security:/opt/bitnami/java/lib/security
+           # - ./vidas_volume/jce/US_export_policy.jar:/opt/bitnami/java/lib/security/US_export_policy.jar
+              
+    orientdb:
+        image: orientdb:2.2.13
+        ports:
+            - 2424:2424 
+            - 2480:2480
+        container_name: 
+           orientdb.example.com
+        environment:
+           ORIENTDB_ROOT_PASSWORD: 'rootpsw'
+        volumes:
+            - ./vidas_volume/orientdb/config:/orientdb/config
+            - ./vidas_volume/orientdb/databases:/orientdb/databases
+            - ./vidas_volume/orientdb/backup:/orientdb/backup
+            
+    openldap:
+        image: dinkel/openldap
+        ports:
+            - 1389:389
+        container_name: 
+           openldap.example.com
+        environment:
+            SLAPD_PASSWORD: Sysmgr48
+            SLAPD_DOMAIN: FTIVidAS
+            SLAPD_ADDITIONAL_SCHEMAS: VidAS
+        volumes:
+            - ./vidas_volume/openldap/database:/var/lib/ldap
+            - ./vidas_volume/openldap/config:/etc/ldap
+            - ./vidas_volume/openldap/schema/VidAS.schema:/etc/ldap/schema/VidAS.schema
